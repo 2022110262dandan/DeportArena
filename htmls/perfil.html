@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PitchMaster - Perfil de Jugador</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config" src="../assets/js/tailwind-config.js"></script>
+<link rel="stylesheet" href="../assets/css/global.css" />
+<link rel="stylesheet" href="../assets/css/perfil.css" />
+</head>
+<body class="bg-background text-on-background">
+<!-- Top Navigation Bar -->
+<nav class="bg-surface-container-lowest shadow-sm fixed top-0 left-0 right-0 z-50 h-16 w-full">
+<div class="flex justify-between items-center px-margin-desktop h-full w-full max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary">
+                PitchMaster
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary-container transition-colors" href="#">Ver Campos</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary-container transition-colors" href="#">Mis Reservas</a>
+<a class="font-label-md text-label-md text-primary border-b-2 border-primary pb-1" href="#">Perfil</a>
+</div>
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-primary-container transition-colors scale-95 active:opacity-80">
+                Cerrar Sesión
+            </button>
+</div>
+</nav>
+<main class="pt-24 pb-12 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Header Profile Card (Bento Area: 8 Cols) -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-xl shadow-sm p-8 flex flex-col md:flex-row items-center gap-8 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-container opacity-10 rounded-full -mr-16 -mt-16"></div>
+<div class="relative">
+<img class="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-surface-container-high object-cover shadow-lg" data-alt="A professional studio portrait of a confident male football player in his late 20s, wearing a clean white athletic jersey. The lighting is soft and cinematic against a neutral grey background, emphasizing a high-performance SaaS aesthetic. The image is crisp, modern, and aligned with a premium sports management platform feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBb6_tyIK0G-Ac1UWeWFXFofuYS_m0jxKlTe3xe77dowKy0ZFd7GVz_HjEN0sgvUWwluMYMPffR5sL3oIVbXabZ-HfnUZ4RwHdzGDFXPPg4Z1gC7A7h9FPoVOjjjwNEsL4xu-sCrHcXxtPsXTB7XMCmx5qWNm8HW3Om5_rOokxSO8VSO2xihb37v6Bef6_cZO50013suA3xVrLsYCYXkhR4RBUgtE1uSJDEK9JuX6MVKO4MG68TnSid"/>
+<div class="absolute bottom-1 right-1 bg-primary p-2 rounded-full border-4 border-surface-container-lowest text-white">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div class="flex-1 text-center md:text-left">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-1">Mateo Silva</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Miembro desde Junio 2023 • Madrid, ES</p>
+<div class="flex flex-wrap justify-center md:justify-start gap-4">
+<div class="bg-surface-container-low px-4 py-2 rounded-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="sports_soccer">sports_soccer</span>
+<span class="font-label-md text-label-md text-on-surface">Delantero Pro</span>
+</div>
+<div class="bg-surface-container-low px-4 py-2 rounded-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="star">star</span>
+<span class="font-label-md text-label-md text-on-surface">4.9 Rating</span>
+</div>
+</div>
+</div>
+<button class="absolute top-6 right-6 p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+</div>
+<!-- Mini Stats Card (Bento Area: 4 Cols) -->
+<div class="md:col-span-4 grid grid-cols-1 gap-gutter">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-6 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div class="p-3 rounded-full bg-primary-container/20 text-primary">
+<span class="material-symbols-outlined" data-icon="stadium" style="font-variation-settings: 'FILL' 1;">stadium</span>
+</div>
+<span class="text-primary font-bold text-label-md">+12% este mes</span>
+</div>
+<div class="mt-4">
+<p class="font-label-md text-label-md text-on-surface-variant">Partidos Jugados</p>
+<h2 class="font-display-lg text-display-lg text-on-surface">48</h2>
+</div>
+</div>
+</div>
+<!-- Position Selector (Bento Area: 5 Cols) -->
+<div class="md:col-span-5 bg-surface-container-lowest rounded-xl shadow-sm p-8">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="tactic">tactic</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Posiciones Preferidas</h3>
+</div>
+<div class="grid grid-cols-2 gap-4" id="position-selector">
+<!-- GK -->
+<button class="position-btn group flex flex-col items-center gap-3 p-4 rounded-xl border-2 border-outline-variant hover:border-primary transition-all duration-200" data-pos="GK">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center group-[.active]:bg-white/20 transition-colors">
+<span class="material-symbols-outlined" data-icon="pan_tool">pan_tool</span>
+</div>
+<span class="font-label-md text-label-md">Portero (GK)</span>
+</button>
+<!-- DF -->
+<button class="position-btn group flex flex-col items-center gap-3 p-4 rounded-xl border-2 border-outline-variant hover:border-primary transition-all duration-200 active" data-pos="DF">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center group-[.active]:bg-white/20 transition-colors">
+<span class="material-symbols-outlined" data-icon="shield">shield</span>
+</div>
+<span class="font-label-md text-label-md">Defensa (DF)</span>
+</button>
+<!-- MF -->
+<button class="position-btn group flex flex-col items-center gap-3 p-4 rounded-xl border-2 border-outline-variant hover:border-primary transition-all duration-200" data-pos="MF">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center group-[.active]:bg-white/20 transition-colors">
+<span class="material-symbols-outlined" data-icon="settings_input_component">settings_input_component</span>
+</div>
+<span class="font-label-md text-label-md">Medio (MF)</span>
+</button>
+<!-- FW -->
+<button class="position-btn group flex flex-col items-center gap-3 p-4 rounded-xl border-2 border-outline-variant hover:border-primary transition-all duration-200 active" data-pos="FW">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center group-[.active]:bg-white/20 transition-colors">
+<span class="material-symbols-outlined" data-icon="local_fire_department">local_fire_department</span>
+</div>
+<span class="font-label-md text-label-md">Delantero (FW)</span>
+</button>
+</div>
+<p class="mt-6 font-label-sm text-label-sm text-on-surface-variant text-center italic">Selecciona hasta 2 posiciones para mejorar tus emparejamientos.</p>
+</div>
+<!-- Tactical Analysis Card (Bento Area: 7 Cols) -->
+<div class="md:col-span-7 bg-surface-container-lowest rounded-xl shadow-sm p-8 overflow-hidden relative">
+<div class="flex justify-between items-center mb-8">
+<h3 class="font-headline-md text-headline-md text-on-surface">Análisis de Campo</h3>
+<div class="flex gap-2">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="w-3 h-3 rounded-full bg-secondary-container"></span>
+</div>
+</div>
+<div class="relative w-full aspect-video rounded-lg overflow-hidden bg-surface-container-highest flex items-center justify-center">
+
+<div class="z-10 text-center">
+<span class="material-symbols-outlined text-primary text-5xl mb-4" data-icon="query_stats">query_stats</span>
+<p class="font-label-md text-label-md text-on-surface">Mapa de calor basado en tus últimos 10 partidos</p>
+<button class="mt-4 px-6 py-2 bg-primary text-on-primary rounded-full font-label-md text-label-md hover:shadow-lg transition-all">Ver Detalles</button>
+</div>
+</div>
+</div>
+<!-- Recent Matches Table -->
+<div class="md:col-span-12 bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="px-8 py-6 border-b border-surface-container-high flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-on-surface">Historial de Partidos</h3>
+<button class="text-primary font-label-md text-label-md hover:underline">Ver todo el historial</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low font-label-md text-label-md text-on-surface-variant">
+<th class="px-8 py-4">Fecha</th>
+<th class="px-8 py-4">Cancha</th>
+<th class="px-8 py-4">Resultado</th>
+<th class="px-8 py-4">Goles/Asist</th>
+<th class="px-8 py-4">Estado</th>
+<th class="px-8 py-4">Acción</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-8 py-5">
+<p class="font-label-md text-label-md text-on-surface">12 Oct, 2023</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">20:00h</p>
+</td>
+<td class="px-8 py-5 flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-container-highest"></div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Santiago Bernabéu F5</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Césped Natural</p>
+</div>
+</td>
+<td class="px-8 py-5">
+<span class="font-bold text-primary">Victoria 4 - 2</span>
+</td>
+<td class="px-8 py-5">
+<span class="font-label-md text-label-md">2 G / 1 A</span>
+</td>
+<td class="px-8 py-5">
+<span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-[12px] font-bold">Completado</span>
+</td>
+<td class="px-8 py-5">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-8 py-5">
+<p class="font-label-md text-label-md text-on-surface">08 Oct, 2023</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">19:30h</p>
+</td>
+<td class="px-8 py-5 flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-container-highest"></div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Camp Nou Indoor</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Sintético</p>
+</div>
+</td>
+<td class="px-8 py-5">
+<span class="font-bold text-error">Derrota 1 - 3</span>
+</td>
+<td class="px-8 py-5">
+<span class="font-label-md text-label-md">0 G / 0 A</span>
+</td>
+<td class="px-8 py-5">
+<span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-[12px] font-bold">Completado</span>
+</td>
+<td class="px-8 py-5">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface mt-12">
+<div class="flex flex-col md:flex-row justify-between items-center py-8 px-margin-desktop w-full max-w-container-max mx-auto">
+<div class="mb-4 md:mb-0">
+<span class="font-headline-md text-headline-md font-bold text-primary">PitchMaster</span>
+<p class="font-body-md text-body-md text-on-tertiary-fixed mt-1">© 2024 PitchMaster Sports Management.</p>
+</div>
+<div class="flex gap-6">
+<a class="font-body-md text-body-md text-on-tertiary-fixed hover:text-primary transition-colors" href="#">Privacidad</a>
+<a class="font-body-md text-body-md text-on-tertiary-fixed hover:text-primary transition-colors" href="#">Términos</a>
+<a class="font-body-md text-body-md text-on-tertiary-fixed hover:text-primary transition-colors" href="#">Contacto</a>
+<a class="font-body-md text-body-md text-on-tertiary-fixed hover:text-primary transition-colors" href="#">Soporte</a>
+</div>
+</div>
+</footer>
+    <script src="../assets/js/global.js"></script>
+    <script src="../assets/js/perfil.js"></script>
+</body></html>

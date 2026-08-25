@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PitchMaster - Agenda Maestra</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config" src="../assets/js/tailwind-config.js"></script>
+<link rel="stylesheet" href="../assets/css/global.css" />
+<link rel="stylesheet" href="../assets/css/agenda_admin.css" />
+</head>
+<body class="bg-background text-on-background overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-surface-container-low flex flex-col py-6 px-4 gap-4 shadow-sm z-30">
+<div class="mb-6 px-2">
+<h1 class="font-headline-md text-headline-md font-black text-primary">DeportArena</h1>
+<p class="text-on-surface-variant font-label-md text-label-md opacity-70">Sport Center Manager</p>
+</div>
+<nav class="flex-1 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-all rounded-lg duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container rounded-lg font-bold transition-all duration-200 translate-x-1" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-label-md text-label-md">Agenda Maestra</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-all rounded-lg duration-200" href="#">
+<span class="material-symbols-outlined">sports_soccer</span>
+<span class="font-label-md text-label-md">Gestión de Canchas</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-all rounded-lg duration-200" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-md text-label-md">Panel de Caja</span>
+</a>
+</nav>
+<div class="mt-auto flex flex-col gap-1 border-t border-surface-variant pt-4">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-all rounded-lg duration-200" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Configuración</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-all rounded-lg duration-200" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-md text-label-md">Salir</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 h-screen flex flex-col overflow-hidden relative">
+<!-- Header / Top Bar -->
+<header class="h-16 flex justify-between items-center px-8 bg-surface-container-lowest shadow-sm z-20">
+<div class="flex items-center gap-6">
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">Agenda Maestra</h2>
+<div class="flex items-center bg-surface-container-high rounded-full px-4 py-1.5 gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">chevron_left</button>
+<span class="font-label-md text-label-md text-on-surface font-semibold">12 - 18 Mayo, 2024</span>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">chevron_right</button>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 bg-error text-white px-4 py-2 rounded-lg font-label-md text-label-md hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">block</span>
+                    Bloqueo Manual
+                </button>
+<button class="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg font-label-md text-label-md shadow-md hover:brightness-110 transition-all">
+<span class="material-symbols-outlined">add</span>
+                    Nueva Reserva
+                </button>
+<div class="w-10 h-10 rounded-full border-2 border-primary-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a middle-aged sports complex administrator with a friendly expression. He is wearing a corporate polo shirt with a subtle logo. The background is a brightly lit, modern office with sports memorabilia and large windows overlooking green football pitches. High-quality corporate photography style with natural lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZb6iq_m_seskGks3QPQvjO39vB7hw0iA53NG_sFHDTuXFbb07C4xkK1u14ivop-v_3cbtOmN78by7OqVIRnROUI_S4fmNIagqX644_urJBhI9kog9IZ_mV4xA64kTELK0W5M7Yy9d74ojlGP8uyqXZewSlaQnW3SgRmtwmcJYIvBV1QRbQEppCEkKidaV00_mE3_xshsYCDITUwKV2oPNM-JpXONYpFSzMVAFk5wlsKC5I4PGKaVn"/>
+</div>
+</div>
+</header>
+<!-- Legend / Filter Bar -->
+<div class="bg-surface-container-low px-8 py-3 flex items-center justify-between border-b border-surface-variant">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary-container"></span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Fútbol 5</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary-container"></span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Fútbol 7</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-tertiary-container"></span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Entrenamiento</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-error-container"></span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Mantenimiento</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-label-sm font-label-sm text-on-surface-variant mr-2">Vista:</span>
+<button class="px-3 py-1 bg-surface-container-highest rounded text-label-sm font-label-sm text-primary font-bold">Semanal</button>
+<button class="px-3 py-1 hover:bg-surface-container-highest rounded text-label-sm font-label-sm text-on-surface-variant transition-colors">Diaria</button>
+</div>
+</div>
+<!-- Scrollable Calendar Area -->
+<div class="flex-1 overflow-auto custom-scrollbar bg-white">
+<div class="calendar-grid">
+<!-- Time Column Header -->
+<div class="sticky top-0 left-0 z-20 bg-surface-container-low border-b border-r border-surface-variant h-14 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant opacity-50">schedule</span>
+</div>
+<!-- Pitch Headers -->
+<div class="sticky top-0 z-10 bg-surface-container-low border-b border-r border-surface-variant h-14 flex flex-col items-center justify-center">
+<span class="font-label-md text-label-md text-primary">Cancha 1</span>
+<span class="text-[10px] uppercase tracking-wider text-on-surface-variant opacity-60">Fútbol 5 - Sintético</span>
+</div>
+<div class="sticky top-0 z-10 bg-surface-container-low border-b border-r border-surface-variant h-14 flex flex-col items-center justify-center">
+<span class="font-label-md text-label-md text-primary">Cancha 2</span>
+<span class="text-[10px] uppercase tracking-wider text-on-surface-variant opacity-60">Fútbol 5 - Sintético</span>
+</div>
+<div class="sticky top-0 z-10 bg-surface-container-low border-b border-r border-surface-variant h-14 flex flex-col items-center justify-center">
+<span class="font-label-md text-label-md text-primary">Cancha 3</span>
+<span class="text-[10px] uppercase tracking-wider text-on-surface-variant opacity-60">Fútbol 7 - Césped</span>
+</div>
+<div class="sticky top-0 z-10 bg-surface-container-low border-b border-r border-surface-variant h-14 flex flex-col items-center justify-center">
+<span class="font-label-md text-label-md text-primary">Cancha 4</span>
+<span class="text-[10px] uppercase tracking-wider text-on-surface-variant opacity-60">Fútbol 7 - Césped</span>
+</div>
+<div class="sticky top-0 z-10 bg-surface-container-low border-b border-surface-variant h-14 flex flex-col items-center justify-center">
+<span class="font-label-md text-label-md text-primary">Cancha 5</span>
+<span class="text-[10px] uppercase tracking-wider text-on-surface-variant opacity-60">Fútbol 11 - Pro</span>
+</div>
+<!-- Calendar Rows -->
+<!-- 08:00 -->
+<div class="h-20 border-b border-r border-surface-variant flex items-start justify-center pt-2 text-label-sm font-label-sm text-on-surface-variant opacity-60 bg-surface-container-lowest">08:00</div>
+<div class="h-20 border-b border-r border-surface-variant relative p-1 group hover:bg-surface-container transition-colors">
+<div class="reservation-block absolute inset-1 bg-tertiary-container rounded-md p-2 shadow-sm border-l-4 border-tertiary">
+<p class="text-[11px] font-bold text-on-tertiary-container leading-tight">Academia Junior</p>
+<p class="text-[9px] text-on-tertiary-fixed-variant">08:00 - 10:00</p>
+</div>
+</div>
+<div class="h-20 border-b border-r border-surface-variant relative p-1 group hover:bg-surface-container transition-colors">
+<div class="reservation-block absolute inset-1 bg-tertiary-container rounded-md p-2 shadow-sm border-l-4 border-tertiary">
+<p class="text-[11px] font-bold text-on-tertiary-container leading-tight">Academia Sub-12</p>
+<p class="text-[9px] text-on-tertiary-fixed-variant">08:00 - 10:00</p>
+</div>
+</div>
+<div class="h-20 border-b border-r border-surface-variant group hover:bg-surface-container transition-colors"></div>
+<div class="h-20 border-b border-r border-surface-variant group hover:bg-surface-container transition-colors"></div>
+<div class="h-20 border-b border-surface-variant group hover:bg-surface-container transition-colors"></div>
+<!-- 09:00 (Span overlaps) -->
+<div class="h-20 border-b border-r border-surface-variant flex items-start justify-center pt-2 text-label-sm font-label-sm text-on-surface-variant opacity-60 bg-surface-container-lowest">09:00</div>
+<div class="h-20 border-b border-r border-surface-variant bg-tertiary-container/20"></div>
+<div class="h-20 border-b border-r border-surface-variant bg-tertiary-container/20"></div>
+<div class="h-20 border-b border-r border-surface-variant group hover:bg-surface-container transition-colors"></div>
+<div class="h-20 border-b border-r border-surface-variant group hover:bg-surface-container transition-colors"></div>
+<div class="h-20 border-b border-surface-variant group hover:bg-surface-container transition-colors"></div>
+<!-- 10:00 -->
+<div class="h-20 border-b border-r border-surface-variant flex items-start justify-center pt-2 text-label-sm font-label-sm text-on-surface-variant opacity-60 bg-surface-container-lowest">10:00</div>
+<div class="h-20 border-b border-r border-surface-variant relative p-1 group hover:bg-surface-container transition-colors">
+<div class="reservation-block absolute inset-1 bg-secondary-container rounded-md p-2 shadow-sm border-l-4 border-secondary">
+<p class="text-[11px] font-bold text-on-secondary-container leading-tight">Reserva: Carlos R.</p>
+<p class="text-[9px] text-on-secondary-fixed-variant">Pagado</p>
+</div>
+</div>
+<div class="h-20 border-b border-r border-surface-variant group hover:bg-surface-container transition-colors"></div>
+<div class="h-20 border-b border-r border-surface-variant relative p-1 group hover:bg-surface-container transition-colors">
+<div class="reservation-block absolute inset-x-1 inset-y-1 h-[152px] z-10 bg-primary-container rounded-md p-2 shadow-md border-l-4 border-primary">
+<div class="flex justify-between items-start">
+<p class="text-[11px] font-bold text-on-primary-container leading-tight">Torneo Local - Cuartos</p>
+<span class="material-symbols-outlined text-xs text-on-primary-container">stars</span>
+</div>
+<p class="text-[9px] text-on-primary-fixed-variant">10:00 - 12:00</p>
+<div class="mt-2 flex -space-x-2">
+<div class="w-5 h-5 rounded-full border border-white bg-slate-300"></div>
+<div class="w-5 h-5 rounded-full border border-white bg-blue-300"></div>
+</div>
+</div>
+</div>
+<div class="h-20 border-b border-r border-surface-variant group hover:bg-surface-container transition-colors"></div>
+<div class="h-20 border-b border-surface-variant group hover:bg-surface-container transition-colors"></div>
+<!-- 11:00 -->
+<div class="h-20 border-b border-r border-surface-variant flex items-start justify-center pt-2 text-label-sm font-label-sm text-on-surface-variant opacity-60 bg-surface-container-lowest">11:00</div>
+<div class="h-20 border-b border-r border-surface-variant group hover:bg-surface-container transition-colors"></div>
+<div class="h-20 border-b border-r border-surface-variant relative p-1 group hover:bg-surface-container transition-colors">
+<div class="reservation-block absolute inset-1 bg-secondary-container rounded-md p-2 shadow-sm border-l-4 border-secondary">
+<p class="text-[11px] font-bold text-on-secondary-container leading-tight">Reserva: Lucía M.</p>
+<p class="text-[9px] text-on-secondary-fixed-variant">Pendiente</p>
+</div>
+</div>
+<div class="h-20 border-b border-r border-surface-variant"></div>
+<div class="h-20 border-b border-r border-surface-variant group hover:bg-surface-container transition-colors"></div>
+<div class="h-20 border-b border-surface-variant group hover:bg-surface-container transition-colors"></div>
+<!-- 12:00 -->
+<div class="h-20 border-b border-r border-surface-variant flex items-start justify-center pt-2 text-label-sm font-label-sm text-on-surface-variant opacity-60 bg-surface-container-lowest">12:00</div>
+<div class="h-20 border-b border-r border-surface-variant relative p-1 group hover:bg-surface-container transition-colors">
+<div class="reservation-block absolute inset-1 bg-error-container rounded-md p-2 shadow-sm border-l-4 border-error flex flex-col justify-center items-center gap-1">
+<span class="material-symbols-outlined text-error text-sm">construction</span>
+<p class="text-[10px] font-bold text-on-error-container uppercase">Mantenimiento</p>
+</div>
+</div>
+<div class="h-20 border-b border-r border-surface-variant relative p-1 group hover:bg-surface-container transition-colors">
+<div class="reservation-block absolute inset-1 bg-error-container rounded-md p-2 shadow-sm border-l-4 border-error flex flex-col justify-center items-center gap-1">
+<span class="material-symbols-outlined text-error text-sm">construction</span>
+<p class="text-[10px] font-bold text-on-error-container uppercase">Mantenimiento</p>
+</div>
+</div>
+<div class="h-20 border-b border-r border-surface-variant group hover:bg-surface-container transition-colors"></div>
+<div class="h-20 border-b border-r border-surface-variant group hover:bg-surface-container transition-colors"></div>
+<div class="h-20 border-b border-surface-variant group hover:bg-surface-container transition-colors"></div>
+<!-- 13:00 -->
+<div class="h-20 border-b border-r border-surface-variant flex items-start justify-center pt-2 text-label-sm font-label-sm text-on-surface-variant opacity-60 bg-surface-container-lowest">13:00</div>
+<div class="h-20 border-b border-r border-surface-variant group hover:bg-surface-container transition-colors"></div>
+<div class="h-20 border-b border-r border-surface-variant group hover:bg-surface-container transition-colors"></div>
+<div class="h-20 border-b border-r border-surface-variant group hover:bg-surface-container transition-colors"></div>
+<div class="h-20 border-b border-r border-surface-variant group hover:bg-surface-container transition-colors"></div>
+<div class="h-20 border-b border-surface-variant group hover:bg-surface-container transition-colors"></div>
+<!-- 14:00 -->
+<div class="h-20 border-b border-r border-surface-variant flex items-start justify-center pt-2 text-label-sm font-label-sm text-on-surface-variant opacity-60 bg-surface-container-lowest">14:00</div>
+<div class="h-20 border-b border-r border-surface-variant group hover:bg-surface-container transition-colors"></div>
+<div class="h-20 border-b border-r border-surface-variant group hover:bg-surface-container transition-colors"></div>
+<div class="h-20 border-b border-r border-surface-variant relative p-1 group hover:bg-surface-container transition-colors">
+<div class="reservation-block absolute inset-1 bg-secondary-container rounded-md p-2 shadow-sm border-l-4 border-secondary">
+<p class="text-[11px] font-bold text-on-secondary-container leading-tight">Reserva: Jorge V.</p>
+<p class="text-[9px] text-on-secondary-fixed-variant">Pagado</p>
+</div>
+</div>
+<div class="h-20 border-b border-r border-surface-variant group hover:bg-surface-container transition-colors"></div>
+<div class="h-20 border-b border-surface-variant group hover:bg-surface-container transition-colors"></div>
+</div>
+</div>
+<!-- Floating Quick View Panel (Contextual) -->
+<div class="absolute bottom-8 right-8 w-80 bg-white shadow-2xl rounded-xl p-6 border border-surface-variant transform translate-y-full transition-transform duration-300 z-50" id="details-panel">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface text-lg">Detalles de Reserva</h4>
+<p class="text-label-sm text-on-surface-variant">ID: #RES-9921</p>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-error transition-colors" onclick="togglePanel()">close</button>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container">person</span>
+</div>
+<div>
+<p class="font-bold text-on-surface text-sm">Carlos Rodríguez</p>
+<p class="text-xs text-on-surface-variant">+54 9 11 1234-5678</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 bg-surface-container-low p-3 rounded-lg">
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold">Fecha</p>
+<p class="text-xs font-semibold">14 May, 2024</p>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold">Hora</p>
+<p class="text-xs font-semibold">10:00 - 11:00</p>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold">Cancha</p>
+<p class="text-xs font-semibold">Cancha 1</p>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold">Monto</p>
+<p class="text-xs font-bold text-primary">$45.000</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-surface-container-highest text-on-surface py-2 rounded-lg text-label-sm font-label-sm hover:bg-surface-variant transition-colors">Reprogramar</button>
+<button class="flex-1 bg-primary text-white py-2 rounded-lg text-label-sm font-label-sm hover:brightness-110 shadow-sm">Confirmar</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Notification Toast -->
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface px-6 py-3 rounded-full flex items-center gap-3 shadow-xl transform translate-y-20 opacity-0 transition-all duration-300 z-[100]" id="toast">
+<span class="material-symbols-outlined text-primary-fixed">check_circle</span>
+<span class="font-label-md text-label-md">Reserva movida exitosamente</span>
+</div>
+<script src="../assets/js/global.js"></script>
+<script src="../assets/js/agenda_admin.js"></script>
+</body></html>

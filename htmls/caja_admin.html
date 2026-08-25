@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Panel de Caja - PitchMaster</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config" src="../assets/js/tailwind-config.js"></script>
+<link rel="stylesheet" href="../assets/css/global.css" />
+<link rel="stylesheet" href="../assets/css/caja_admin.css" />
+</head>
+<body class="text-on-background">
+<!-- Sidebar Navigation -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-surface-container-low flex flex-col py-6 px-4 gap-4 shadow-sm z-50">
+<div class="mb-6 px-2">
+<h1 class="font-headline-md text-headline-md font-black text-primary">DeportArena</h1>
+<p class="text-on-surface-variant font-label-md text-label-md opacity-70">Sport Center Manager</p>
+</div>
+<nav class="flex-grow flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-label-md text-label-md">Agenda Maestra</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined">sports_soccer</span>
+<span class="font-label-md text-label-md">Gestión de Canchas</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 bg-primary-container text-on-primary-container rounded-lg font-bold shadow-sm" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-md text-label-md">Panel de Caja</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-surface-variant/30 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Configuración</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-md text-label-md">Salir</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="ml-64 min-h-screen p-8">
+<!-- Header & Summary -->
+<header class="flex justify-between items-end mb-8">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Panel de Caja</h2>
+<p class="text-on-surface-variant font-body-md text-body-md">Control de deudas y cierres diarios.</p>
+</div>
+<div class="flex gap-4">
+<button class="bg-surface-container-highest text-on-surface px-4 py-2 rounded-lg font-label-md text-label-md flex items-center gap-2 hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined">print</span> Imprimir Reporte
+                </button>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md text-label-md flex items-center gap-2 hover:opacity-90 transition-opacity shadow-sm">
+<span class="material-symbols-outlined">account_balance_wallet</span> Cerrar Caja
+                </button>
+</div>
+</header>
+<!-- Summary Metric Cards -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+<div class="bg-white p-6 rounded-xl shadow-sm border border-surface-container flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-primary-container/10 rounded-full text-primary">
+<span class="material-symbols-outlined">attach_money</span>
+</div>
+<span class="text-primary font-bold text-sm bg-primary/10 px-2 py-0.5 rounded">+12%</span>
+</div>
+<span class="text-on-surface-variant font-label-md text-label-md">Total Recaudado</span>
+<span class="font-display-lg text-[32px] leading-tight text-on-surface mt-1">$45.200</span>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-sm border border-surface-container flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-secondary-container/10 rounded-full text-secondary">
+<span class="material-symbols-outlined">credit_card</span>
+</div>
+<span class="text-secondary font-bold text-sm bg-secondary/10 px-2 py-0.5 rounded">Digital</span>
+</div>
+<span class="text-on-surface-variant font-label-md text-label-md">Pagos Online</span>
+<span class="font-display-lg text-[32px] leading-tight text-on-surface mt-1">$12.850</span>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-sm border border-surface-container flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-error-container/10 rounded-full text-error">
+<span class="material-symbols-outlined">warning</span>
+</div>
+<span class="text-error font-bold text-sm bg-error/10 px-2 py-0.5 rounded">Pendiente</span>
+</div>
+<span class="text-on-surface-variant font-label-md text-label-md">Deuda Pendiente</span>
+<span class="font-display-lg text-[32px] leading-tight text-error mt-1">$8.400</span>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-sm border border-surface-container flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-tertiary-container/10 rounded-full text-tertiary">
+<span class="material-symbols-outlined">group</span>
+</div>
+<span class="text-on-surface-variant font-bold text-sm bg-surface-container-highest px-2 py-0.5 rounded">Hoy</span>
+</div>
+<span class="text-on-surface-variant font-label-md text-label-md">Jugadores por Cobrar</span>
+<span class="font-display-lg text-[32px] leading-tight text-on-surface mt-1">14</span>
+</div>
+</div>
+<!-- Table View: Control de Deudas -->
+<section class="bg-white rounded-xl shadow-sm border border-surface-container overflow-hidden">
+<div class="px-6 py-5 border-b border-surface-container flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-on-surface">Control de Deudas</h3>
+<div class="flex items-center gap-3 bg-surface-container-low px-4 py-2 rounded-lg border border-surface-variant">
+<span class="material-symbols-outlined text-on-surface-variant text-xl">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-64 placeholder-on-surface-variant/60" placeholder="Buscar jugador o reserva..." type="text"/>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50">
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant">Jugador</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant">Cancha / Turno</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant">Estado Pago</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant">Monto Total</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant text-right">Saldo Deudor</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant text-center">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest border border-surface-variant">
+<img class="w-full h-full object-cover" data-alt="A close-up portrait of a young athletic male player in his late 20s, smiling with short hair, wearing a professional green sports jersey. The lighting is soft studio quality, with a clean neutral background. Professional SaaS UI portrait style, corporate and modern aesthetic with vibrant but balanced colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7jjMQUjdG2mAZIrvHU0Rar1u78vlODF-IRhbBecoc3-JaNZyqMxRyUWrahe8y1j7AUOT1oLByzpaQazTlWn8q6R3BVKJULcNkBd1ksDRqzX9Ck1Pv9DKhT00J8PmvtkcJRI2zJpuMXGE1FjF5hiSSgmdfYBP5zRO94Py8-Ca9lCHCXMgArdV6IM2n414zaJ8FZW82c9OHsVYOecgQ0XkjDpMcC7GQHdenmeI_DYCquPaNoYg0J2wy"/>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Andrés García</p>
+<p class="text-xs text-on-surface-variant">ID #98221</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="font-label-md text-label-md text-on-surface">Cancha 5 (Fútbol 7)</p>
+<p class="text-xs text-on-surface-variant">Hoy - 19:00 a 20:30</p>
+</td>
+<td class="px-6 py-4">
+<span class="bg-error-container text-on-error-container px-3 py-1 rounded-full text-[12px] font-semibold border border-error/10">Pendiente</span>
+</td>
+<td class="px-6 py-4 font-body-md text-body-md text-on-surface">$5.500</td>
+<td class="px-6 py-4 font-label-md text-label-md text-error text-right">$3.500</td>
+<td class="px-6 py-4">
+<div class="flex justify-center">
+<button class="bg-primary-container text-on-primary-container px-4 py-2 rounded-lg font-label-md text-label-md hover:scale-[1.02] active:scale-95 transition-all shadow-sm flex items-center gap-2" onclick="openCheckoutModal('Andrés García', 3500)">
+<span class="material-symbols-outlined text-lg">check_circle</span> Check-in &amp; Pago
+                                    </button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest border border-surface-variant">
+<img class="w-full h-full object-cover" data-alt="Close-up headshot of a female athlete with her hair tied back, wearing a navy blue soccer training top. The lighting is bright and airy, reflecting a morning outdoor game feel. High-end modern photography for a sports management application with focus on professional corporate look and feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCu3l4QbQ6hCqLjBrt4-61CbGdD760UtXMdyE66S2CwQmbVRhCVzWD_F5XYCXeOekd4CJfTviXmfce1seCc2ufXTxtfwtvJhcnYk5-Jdyxio3ayJkjSaHV37qkR-VtWgGUjb3tZpxMWncqG3X3SgVJVBIpBw5DL4c8dEhpxMzJuzRhSv_3j3vzV09le5r7XZXQlNFy6o-UqxmZTNnjXKEN4nHmE9tCjQ0mvVKQRRSanINlcf0A8yNyo"/>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Valentina Ruiz</p>
+<p class="text-xs text-on-surface-variant">ID #98115</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="font-label-md text-label-md text-on-surface">Cancha 1 (Fútbol 5)</p>
+<p class="text-xs text-on-surface-variant">Hoy - 20:00 a 21:00</p>
+</td>
+<td class="px-6 py-4">
+<span class="bg-surface-container-highest text-on-tertiary-fixed-variant px-3 py-1 rounded-full text-[12px] font-semibold border border-outline/10">Parcial</span>
+</td>
+<td class="px-6 py-4 font-body-md text-body-md text-on-surface">$4.000</td>
+<td class="px-6 py-4 font-label-md text-label-md text-error text-right">$1.200</td>
+<td class="px-6 py-4">
+<div class="flex justify-center">
+<button class="bg-primary-container text-on-primary-container px-4 py-2 rounded-lg font-label-md text-label-md hover:scale-[1.02] active:scale-95 transition-all shadow-sm flex items-center gap-2" onclick="openCheckoutModal('Valentina Ruiz', 1200)">
+<span class="material-symbols-outlined text-lg">check_circle</span> Check-in &amp; Pago
+                                    </button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest border border-surface-variant">
+<img class="w-full h-full object-cover" data-alt="Professional headshot of a middle-aged man with a short beard and friendly expression, wearing a sports polo shirt. The scene has soft, diffuse lighting typical of high-quality corporate branding. Clean white and light blue color palette for a high-performance SaaS dashboard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOLmN1rlBZJE83GBhCOg6LXl3R021XH4Pem2iA_5JqDpN0hfA5axm5LNVHDS7B9ByzGzTyX7rumUvfdFokF5YQcK6rAi7iL7uDlCSb1fxjy2sUHUxdnq1qyToEiOImcDEqIOfHA-06PwnPJkEtfUMg5L-_vqEnBoDkWp834uxhjLmnlXi7yqRUfqQL0m5bP9ffti1GO2jEQtLTlX1VI6GEMyQjQlE7S3zMQ_ZUfR7STJzhZFqqOzXv"/>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Marcos López</p>
+<p class="text-xs text-on-surface-variant">ID #98440</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="font-label-md text-label-md text-on-surface">Cancha 3 (Pádel)</p>
+<p class="text-xs text-on-surface-variant">Hoy - 21:30 a 23:00</p>
+</td>
+<td class="px-6 py-4">
+<span class="bg-error-container text-on-error-container px-3 py-1 rounded-full text-[12px] font-semibold border border-error/10">Pendiente</span>
+</td>
+<td class="px-6 py-4 font-body-md text-body-md text-on-surface">$3.200</td>
+<td class="px-6 py-4 font-label-md text-label-md text-error text-right">$3.200</td>
+<td class="px-6 py-4">
+<div class="flex justify-center">
+<button class="bg-primary-container text-on-primary-container px-4 py-2 rounded-lg font-label-md text-label-md hover:scale-[1.02] active:scale-95 transition-all shadow-sm flex items-center gap-2" onclick="openCheckoutModal('Marcos López', 3200)">
+<span class="material-symbols-outlined text-lg">check_circle</span> Check-in &amp; Pago
+                                    </button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-6 py-4 bg-surface-container-low border-t border-surface-container flex justify-between items-center">
+<span class="text-xs text-on-surface-variant">Mostrando 1-3 de 14 resultados</span>
+<div class="flex gap-2">
+<button class="p-1 rounded hover:bg-surface-container-highest text-on-surface-variant"><span class="material-symbols-outlined">chevron_left</span></button>
+<button class="p-1 rounded hover:bg-surface-container-highest text-on-surface-variant"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</div>
+</section>
+</main>
+<!-- Modal: Checkout & Payment -->
+<div class="fixed inset-0 bg-inverse-surface/60 backdrop-blur-sm z-[100] flex items-center justify-center hidden opacity-0 transition-opacity duration-300" id="checkoutModal">
+<div class="bg-white w-full max-w-lg rounded-2xl shadow-xl overflow-hidden transform scale-95 transition-transform duration-300">
+<div class="px-6 py-6 border-b border-surface-container flex justify-between items-center bg-primary/5">
+<h4 class="font-headline-md text-headline-md text-on-surface">Procesar Pago</h4>
+<button class="text-on-surface-variant hover:text-error transition-colors" onclick="closeCheckoutModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-8">
+<div class="mb-8 text-center">
+<p class="text-on-surface-variant font-label-md text-label-md uppercase tracking-wider mb-1">Monto a cobrar</p>
+<h5 class="font-display-lg text-[48px] text-primary" id="modalAmount">$3.500</h5>
+<p class="text-on-surface font-body-lg text-body-lg mt-2" id="modalPlayer">Jugador: Andrés García</p>
+</div>
+<div class="mb-8">
+<p class="font-label-md text-label-md text-on-surface mb-4">Seleccione Método de Pago</p>
+<div class="grid grid-cols-3 gap-4">
+<label class="cursor-pointer">
+<input checked="" class="hidden peer" name="paymentMethod" type="radio" value="cash"/>
+<div class="flex flex-col items-center gap-2 p-4 rounded-xl border-2 border-surface-container peer-checked:border-primary peer-checked:bg-primary/5 transition-all">
+<span class="material-symbols-outlined text-3xl text-on-surface-variant peer-checked:text-primary">payments</span>
+<span class="font-label-md text-label-md">Efectivo</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="hidden peer" name="paymentMethod" type="radio" value="card"/>
+<div class="flex flex-col items-center gap-2 p-4 rounded-xl border-2 border-surface-container peer-checked:border-primary peer-checked:bg-primary/5 transition-all">
+<span class="material-symbols-outlined text-3xl text-on-surface-variant peer-checked:text-primary">credit_card</span>
+<span class="font-label-md text-label-md">Tarjeta</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="hidden peer" name="paymentMethod" type="radio" value="transfer"/>
+<div class="flex flex-col items-center gap-2 p-4 rounded-xl border-2 border-surface-container peer-checked:border-primary peer-checked:bg-primary/5 transition-all">
+<span class="material-symbols-outlined text-3xl text-on-surface-variant peer-checked:text-primary">account_balance</span>
+<span class="font-label-md text-label-md">Transfer</span>
+</div>
+</label>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<button class="w-full bg-primary text-on-primary py-4 rounded-xl font-headline-md text-headline-md shadow-md hover:opacity-90 active:scale-[0.98] transition-all" onclick="confirmPayment()">
+                        Confirmar Pago
+                    </button>
+<button class="w-full text-on-surface-variant py-2 font-label-md text-label-md hover:underline decoration-2 underline-offset-4" onclick="closeCheckoutModal()">
+                        Cancelar
+                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Notification Toast -->
+<div class="fixed bottom-8 right-8 bg-inverse-surface text-inverse-on-surface px-6 py-4 rounded-xl shadow-2xl flex items-center gap-4 translate-y-24 opacity-0 transition-all duration-300 z-[200]" id="toast">
+<div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-lg">check</span>
+</div>
+<div>
+<p class="font-bold text-sm">¡Pago Procesado!</p>
+<p class="text-xs opacity-80">La deuda ha sido actualizada correctamente.</p>
+</div>
+</div>
+    <script src="../assets/js/global.js"></script>
+    <script src="../assets/js/caja_admin.js"></script>
+</body></html>

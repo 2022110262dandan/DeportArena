@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DeportArena | Reserva tu Cancha</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config" src="../assets/js/tailwind-config.js"></script>
+<link rel="stylesheet" href="../assets/css/global.css" />
+<link rel="stylesheet" href="../assets/css/reservar.css" />
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md">
+<!-- TopNavBar -->
+<header class="bg-surface-container-lowest shadow-sm sticky top-0 z-50">
+<nav class="flex justify-between items-center px-margin-desktop h-16 w-full max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary">DeportArena</div>
+<div class="hidden md:flex gap-8 items-center h-full">
+<a class="font-label-md text-label-md text-primary border-b-2 border-primary pb-1" href="#">Ver Campos</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary-container transition-colors" href="#">Mis Reservas</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary-container transition-colors" href="#">Perfil</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-primary-container transition-colors scale-95 active:opacity-80">Cerrar Sesión</button>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a smiling young athletic male manager in a clean white polo shirt, high-end photography with soft studio lighting and a clean blurred background, modern and trustworthy SaaS profile aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuClYliGr_cNxlyqp6rO-qvLMPn9z0pVTnhSgZN0DS3HfPTipkQe27T8WmcbghgBUSkl4CmTjTrMvxCsDy0EhzKcF5h0tLWEoklH6uMrCHGP-EPs-GxVAle2FB2SMqZUpuYYTuk8vdyNLjo89nMuCneC488uo6A3i3HzNAwqcga3W7x_-XwLPWf9p--ss1kaASebckeo_-8Llak3J8di9lor5B1vZi4w7JShh1WpEI7Lq_v-tYZ3XU-W"/>
+</div>
+</div>
+</nav>
+</header>
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-desktop py-12">
+<div class="mb-10">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-2">Reserva tu Campo</h1>
+<p class="text-on-surface-variant">Selecciona el día, la hora y el campo para tu próximo partido.</p>
+</div>
+<!-- Booking Interface: Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- LEFT: Calendar (Col Span 7) -->
+<div class="col-span-12 lg:col-span-7 space-y-6">
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-surface-container-highest">
+<div class="flex justify-between items-center mb-8">
+<h2 class="font-headline-md text-headline-md flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">calendar_today</span>
+                            Octubre 2024
+                        </h2>
+<div class="flex gap-2">
+<button class="p-2 rounded-lg hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="p-2 rounded-lg hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="calendar-grid gap-2 text-center">
+<!-- Days of week -->
+<div class="text-on-surface-variant font-label-md py-2">Lun</div>
+<div class="text-on-surface-variant font-label-md py-2">Mar</div>
+<div class="text-on-surface-variant font-label-md py-2">Mié</div>
+<div class="text-on-surface-variant font-label-md py-2">Jue</div>
+<div class="text-on-surface-variant font-label-md py-2">Vie</div>
+<div class="text-on-surface-variant font-label-md py-2 text-secondary font-bold">Sáb</div>
+<div class="text-on-surface-variant font-label-md py-2 text-secondary font-bold">Dom</div>
+<!-- Days (Mockup) -->
+<div class="p-4 rounded-lg text-surface-dim pointer-events-none">28</div>
+<div class="p-4 rounded-lg text-surface-dim pointer-events-none">29</div>
+<div class="p-4 rounded-lg text-surface-dim pointer-events-none">30</div>
+<button class="p-4 rounded-lg hover:bg-surface-container-high transition-all text-on-surface font-medium border border-transparent">1</button>
+<button class="p-4 rounded-lg hover:bg-surface-container-high transition-all text-on-surface font-medium border border-transparent">2</button>
+<button class="p-4 rounded-lg hover:bg-surface-container-high transition-all text-on-surface font-medium border border-transparent">3</button>
+<button class="p-4 rounded-lg hover:bg-surface-container-high transition-all text-on-surface font-medium border border-transparent">4</button>
+<button class="p-4 rounded-lg hover:bg-surface-container-high transition-all text-on-surface font-medium border border-transparent">5</button>
+<button class="p-4 rounded-lg bg-primary text-white font-bold shadow-md">6</button>
+<button class="p-4 rounded-lg hover:bg-surface-container-high transition-all text-on-surface font-medium border border-transparent">7</button>
+<button class="p-4 rounded-lg hover:bg-surface-container-high transition-all text-on-surface font-medium border border-transparent">8</button>
+<button class="p-4 rounded-lg hover:bg-surface-container-high transition-all text-on-surface font-medium border border-transparent relative">
+                            9
+                            <span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-primary rounded-full"></span>
+</button>
+<button class="p-4 rounded-lg hover:bg-surface-container-high transition-all text-on-surface font-medium border border-transparent">10</button>
+<button class="p-4 rounded-lg hover:bg-surface-container-high transition-all text-on-surface font-medium border border-transparent">11</button>
+<button class="p-4 rounded-lg hover:bg-surface-container-high transition-all text-on-surface font-medium border border-transparent relative">
+                            12
+                            <span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-secondary rounded-full"></span>
+</button>
+<!-- Add remaining days simply for visuals -->
+</div>
+</div>
+<!-- Pitch Info Card -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-surface-container-highest flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">sports_soccer</span>
+</div>
+<div>
+<p class="font-label-md text-on-surface-variant">Tipo de Campo</p>
+<p class="font-headline-md text-on-surface text-lg">Fútbol 7 (Sintético)</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-surface-container-highest flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<div>
+<p class="font-label-md text-on-surface-variant">Tarifa / Hora</p>
+<p class="font-headline-md text-on-surface text-lg">$45.000 COP</p>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT: Selector & Summary (Col Span 5) -->
+<div class="col-span-12 lg:col-span-5 space-y-6">
+<!-- Pitch Selector Dropdown Custom -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-surface-container-highest">
+<label class="block font-label-md text-on-surface-variant mb-4">Selecciona tu Cancha</label>
+<div class="flex flex-col gap-3">
+<button class="w-full flex items-center justify-between p-4 rounded-xl border-2 border-primary bg-primary-container/10 transition-all">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">grass</span>
+<span class="font-bold text-on-primary-container">Campo Central - Wembley</span>
+</div>
+<span class="material-symbols-outlined text-primary">check_circle</span>
+</button>
+<button class="w-full flex items-center justify-between p-4 rounded-xl border border-outline-variant hover:border-primary/50 transition-all">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">grass</span>
+<span class="font-medium text-on-surface">Campo Norte - Maracaná</span>
+</div>
+</button>
+<button class="w-full flex items-center justify-between p-4 rounded-xl border border-outline-variant hover:border-primary/50 transition-all">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">grass</span>
+<span class="font-medium text-on-surface">Campo Sur - La Bombonera</span>
+</div>
+</button>
+</div>
+<div class="mt-8">
+<label class="block font-label-md text-on-surface-variant mb-4">Horas Disponibles (Domingo 6)</label>
+<div class="time-slot-grid gap-3 max-h-64 overflow-y-auto custom-scrollbar pr-2">
+<!-- Slot Item -->
+<button class="p-3 rounded-lg border border-outline-variant hover:bg-primary hover:text-white transition-all text-center">
+<span class="font-bold">08:00</span>
+<p class="text-[10px] opacity-70">Libre</p>
+</button>
+<button class="p-3 rounded-lg bg-primary-container text-on-primary-container border border-primary-container font-bold text-center">
+<span class="font-bold">09:00</span>
+<p class="text-[10px] opacity-70">Selecc.</p>
+</button>
+<button class="p-3 rounded-lg border border-outline-variant opacity-40 cursor-not-allowed bg-surface-container text-on-surface-variant text-center">
+<span class="font-bold">10:00</span>
+<p class="text-[10px]">Ocupado</p>
+</button>
+<button class="p-3 rounded-lg border border-outline-variant hover:bg-primary hover:text-white transition-all text-center">
+<span class="font-bold">11:00</span>
+<p class="text-[10px] opacity-70">Libre</p>
+</button>
+<button class="p-3 rounded-lg border border-outline-variant hover:bg-primary hover:text-white transition-all text-center">
+<span class="font-bold">12:00</span>
+<p class="text-[10px] opacity-70">Libre</p>
+</button>
+<button class="p-3 rounded-lg border border-outline-variant hover:bg-primary hover:text-white transition-all text-center">
+<span class="font-bold">13:00</span>
+<p class="text-[10px] opacity-70">Libre</p>
+</button>
+<button class="p-3 rounded-lg border border-outline-variant hover:bg-primary hover:text-white transition-all text-center">
+<span class="font-bold">14:00</span>
+<p class="text-[10px] opacity-70">Libre</p>
+</button>
+<button class="p-3 rounded-lg border border-outline-variant hover:bg-primary hover:text-white transition-all text-center">
+<span class="font-bold">15:00</span>
+<p class="text-[10px] opacity-70">Libre</p>
+</button>
+<button class="p-3 rounded-lg border border-outline-variant hover:bg-primary hover:text-white transition-all text-center">
+<span class="font-bold">16:00</span>
+<p class="text-[10px] opacity-70">Libre</p>
+</button>
+<button class="p-3 rounded-lg border border-outline-variant hover:bg-primary hover:text-white transition-all text-center">
+<span class="font-bold">17:00</span>
+<p class="text-[10px] opacity-70">Libre</p>
+</button>
+<button class="p-3 rounded-lg border border-outline-variant hover:bg-primary hover:text-white transition-all text-center">
+<span class="font-bold">18:00</span>
+<p class="text-[10px] opacity-70">Libre</p>
+</button>
+<button class="p-3 rounded-lg border border-outline-variant hover:bg-primary hover:text-white transition-all text-center">
+<span class="font-bold">19:00</span>
+<p class="text-[10px] opacity-70">Libre</p>
+</button>
+</div>
+</div>
+</div>
+<!-- Final CTA Card -->
+<div class="bg-primary p-8 rounded-xl shadow-lg text-white space-y-6 relative overflow-hidden">
+<!-- Subtle background pattern/glow -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-3xl -mr-10 -mt-10"></div>
+<div class="relative z-10">
+<h3 class="font-headline-md text-headline-md mb-4">Resumen de Reserva</h3>
+<div class="space-y-3 opacity-90 mb-8">
+<div class="flex justify-between items-center">
+<span class="font-label-md">Fecha</span>
+<span class="font-bold text-primary-fixed">Domingo, 6 Oct</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-label-md">Hora</span>
+<span class="font-bold text-primary-fixed">09:00 AM - 10:00 AM</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-label-md">Campo</span>
+<span class="font-bold text-primary-fixed">Wembley (F7)</span>
+</div>
+<div class="border-t border-white/20 pt-3 flex justify-between items-center text-lg">
+<span class="font-bold">Total a Pagar</span>
+<span class="font-black">$45.000</span>
+</div>
+</div>
+<button class="w-full bg-white text-primary font-bold py-4 rounded-xl shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 group">
+<span>Reservar campo</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<p class="text-center text-[11px] mt-4 opacity-70">Al reservar aceptas nuestros términos y condiciones de cancelación.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest mt-20">
+<div class="flex flex-col md:flex-row justify-between items-center py-8 px-margin-desktop w-full max-w-container-max mx-auto border-t border-surface-variant">
+<div class="flex flex-col gap-2 mb-6 md:mb-0">
+<div class="font-headline-md text-headline-md font-bold text-primary">PitchMaster</div>
+<p class="text-on-tertiary-fixed-variant text-sm max-w-xs">© 2024 PitchMaster Sports Management. Todos los derechos reservados.</p>
+</div>
+<div class="flex gap-8 items-center">
+<a class="font-body-md text-body-md text-on-tertiary-fixed hover:text-primary transition-colors" href="#">Privacidad</a>
+<a class="font-body-md text-body-md text-on-tertiary-fixed hover:text-primary transition-colors" href="#">Términos de Uso</a>
+<a class="font-body-md text-body-md text-on-tertiary-fixed hover:text-primary transition-colors" href="#">Contacto</a>
+<a class="font-body-md text-body-md text-on-tertiary-fixed hover:text-primary transition-colors" href="#">Soporte</a>
+</div>
+</div>
+</footer>
+    <script src="../assets/js/global.js"></script>
+    <script src="../assets/js/reservar.js"></script>
+</body></html>

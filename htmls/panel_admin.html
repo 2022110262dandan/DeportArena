@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PitchMaster | Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config" src="../assets/js/tailwind-config.js"></script>
+<link rel="stylesheet" href="../assets/css/global.css" />
+<link rel="stylesheet" href="../assets/css/panel_admin.css" />
+</head>
+<body class="bg-background text-on-background min-h-screen flex">
+<!-- SideNavBar Anchor -->
+<aside class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 bg-surface-container-low border-r border-outline-variant py-6 px-4 gap-4 z-50">
+<div class="mb-6 px-2">
+<h1 class="font-headline-md text-headline-md font-black text-primary">DeportArena</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Admin Panel</p>
+</div>
+<nav class="flex flex-col gap-1 flex-1">
+<a class="flex items-center gap-3 px-3 py-3 bg-primary-container text-on-primary-container rounded-lg font-bold transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-label-md text-label-md">Agenda Maestra</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">sports_soccer</span>
+<span class="font-label-md text-label-md">Gestión de Canchas</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-md text-label-md">Panel de Caja</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-outline-variant pt-4 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Configuración</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-md text-label-md">Salir</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 p-6 lg:p-margin-desktop overflow-x-hidden">
+<!-- Header -->
+<header class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Panel de Control</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Resumen de actividad para hoy, 24 de Mayo.</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative">
+<button class="p-2 rounded-full bg-surface-container-high text-on-surface-variant relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1 right-1 w-2.5 h-2.5 bg-error rounded-full border-2 border-surface"></span>
+</button>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 bg-surface-container-high rounded-full">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-primary-container">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a sports complex manager, a male in his 40s with a friendly expression, wearing a polo shirt with a subtle sports logo. The lighting is bright and professional, suggesting a modern high-performance workspace in a sports facility. Minimalist office background with clean lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2n_myCbL2gsXn8t7QNkZloZ80-ziL1Q2EHuy1OgkS4G_1PcL4t3_-1s4Iw2csKgH5jGtXCx6dJsQpSiH0gM_mC42behIGuDMQ5VmOphrj2lf6OFKC9zx5N8CcTXLZAxa_2C0dEHX-nM_F6SwTdML619HAZbYyxvmn6ilUlKF8GDWy7y0cFAvZEjsFLtOhYbNLNVie10Raub___O-lCONfMnvIkwxWp3hfAbQ2SkVTAntJAhw0iJ6j"/>
+</div>
+<div class="hidden sm:block">
+<p class="font-label-md text-label-md text-on-surface leading-none">Admin Profile</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider font-bold">Sport Center Manager</p>
+</div>
+</div>
+</div>
+</header>
+<!-- KPI Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-8">
+<!-- % Ocupación -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/30 flex flex-col relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined !text-6xl">pie_chart</span>
+</div>
+<span class="text-on-surface-variant font-label-md text-label-md mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">analytics</span>
+                    Ocupación Total
+                </span>
+<div class="flex items-end gap-2">
+<span class="font-display-lg text-display-lg text-on-surface">85%</span>
+<span class="text-primary font-bold text-label-md mb-2">+12% vs ayer</span>
+</div>
+<div class="mt-4 h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[85%] rounded-full"></div>
+</div>
+</div>
+<!-- Ingresos Hoy -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/30 flex flex-col group">
+<span class="text-on-surface-variant font-label-md text-label-md mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">payments</span>
+                    Ingresos Hoy
+                </span>
+<div class="flex items-end gap-2">
+<span class="font-display-lg text-display-lg text-on-surface">$450</span>
+<span class="text-on-surface-variant font-label-md text-label-md mb-2">/ día</span>
+</div>
+<div class="mt-4 flex gap-1 items-end h-8">
+<div class="w-full bg-secondary-container h-[40%] rounded-t-sm"></div>
+<div class="w-full bg-secondary-container h-[60%] rounded-t-sm"></div>
+<div class="w-full bg-secondary-container h-[35%] rounded-t-sm"></div>
+<div class="w-full bg-secondary-container h-[90%] rounded-t-sm"></div>
+<div class="w-full bg-secondary h-[100%] rounded-t-sm"></div>
+</div>
+</div>
+<!-- Ingresos Mes -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/30 flex flex-col group">
+<span class="text-on-surface-variant font-label-md text-label-md mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">calendar_view_month</span>
+                    Ingresos Mes
+                </span>
+<div class="flex items-end gap-2">
+<span class="font-display-lg text-display-lg text-on-surface">$12k</span>
+<span class="text-error font-bold text-label-md mb-2">-2% meta</span>
+</div>
+<p class="mt-4 font-label-sm text-label-sm text-on-surface-variant">Próximo cierre en 6 días</p>
+</div>
+<!-- Partidos Agendados -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/30 flex flex-col group">
+<span class="text-on-surface-variant font-label-md text-label-md mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">sports_soccer</span>
+                    Reservas Activas
+                </span>
+<div class="flex items-end gap-2">
+<span class="font-display-lg text-display-lg text-on-surface">24</span>
+<span class="text-on-surface-variant font-label-md text-label-md mb-2">Hoy</span>
+</div>
+<div class="mt-4 flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-slate-200"></div>
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-slate-300"></div>
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-slate-400"></div>
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-primary-container flex items-center justify-center text-[10px] text-on-primary-container font-bold">+18</div>
+</div>
+</div>
+</div>
+<!-- Real-time Timeline Bar -->
+<section class="mb-8 bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/30 overflow-hidden">
+<div class="p-6 border-b border-outline-variant/30 flex items-center justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Estado de Canchas en Tiempo Real</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Ocupación actual por bloque horario</p>
+</div>
+<div class="flex gap-2">
+<div class="flex items-center gap-2 text-label-sm px-3 py-1 bg-surface-container rounded-full">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span> Ocupada
+                    </div>
+<div class="flex items-center gap-2 text-label-sm px-3 py-1 bg-surface-container rounded-full">
+<span class="w-2 h-2 rounded-full bg-slate-200"></span> Libre
+                    </div>
+</div>
+</div>
+<div class="overflow-x-auto hide-scrollbar">
+<div class="min-w-[800px] p-6">
+<!-- Timeline Header -->
+<div class="grid grid-cols-12 gap-2 mb-4">
+<div class="col-span-2"></div>
+<div class="col-span-2 text-center text-label-sm font-bold text-on-surface-variant">17:00</div>
+<div class="col-span-2 text-center text-label-sm font-bold text-on-surface-variant">18:00</div>
+<div class="col-span-2 text-center text-label-sm font-bold text-on-surface-variant">19:00</div>
+<div class="col-span-2 text-center text-label-sm font-bold text-on-surface-variant">20:00</div>
+<div class="col-span-2 text-center text-label-sm font-bold text-on-surface-variant">21:00</div>
+</div>
+<!-- PITCH ROWS -->
+<div class="flex flex-col gap-4">
+<!-- Cancha 1 -->
+<div class="grid grid-cols-12 gap-2 items-center">
+<div class="col-span-2 font-label-md text-label-md text-on-surface flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span> Cancha 1
+                            </div>
+<div class="col-span-10 grid grid-cols-10 gap-1 h-10">
+<div class="col-span-2 bg-primary-container/20 border border-primary/20 rounded flex items-center px-2 text-[10px] font-bold text-on-primary-container overflow-hidden whitespace-nowrap">
+                                    Juan Perez
+                                </div>
+<div class="col-span-1 bg-slate-100 rounded"></div>
+<div class="col-span-3 bg-primary-container/20 border border-primary/20 rounded flex items-center px-2 text-[10px] font-bold text-on-primary-container overflow-hidden whitespace-nowrap">
+                                    FC Halcones
+                                </div>
+<div class="col-span-4 bg-primary-container border border-primary/20 rounded flex items-center px-2 text-[10px] font-bold text-white overflow-hidden whitespace-nowrap">
+                                    Carlos Ruiz (ACTUAL)
+                                </div>
+</div>
+</div>
+<!-- Cancha 2 -->
+<div class="grid grid-cols-12 gap-2 items-center">
+<div class="col-span-2 font-label-md text-label-md text-on-surface flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-slate-300"></span> Cancha 2
+                            </div>
+<div class="col-span-10 grid grid-cols-10 gap-1 h-10">
+<div class="col-span-5 bg-slate-100 rounded"></div>
+<div class="col-span-3 bg-primary-container/20 border border-primary/20 rounded flex items-center px-2 text-[10px] font-bold text-on-primary-container overflow-hidden whitespace-nowrap">
+                                    Marta Sanchez
+                                </div>
+<div class="col-span-2 bg-slate-100 rounded"></div>
+</div>
+</div>
+<!-- Cancha 3 -->
+<div class="grid grid-cols-12 gap-2 items-center">
+<div class="col-span-2 font-label-md text-label-md text-on-surface flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span> Cancha 3
+                            </div>
+<div class="col-span-10 grid grid-cols-10 gap-1 h-10">
+<div class="col-span-10 bg-primary-container/10 border border-primary/10 rounded flex items-center px-2 text-[10px] font-bold text-on-primary-container italic">
+                                    Mantenimiento Programado
+                                </div>
+</div>
+</div>
+<!-- Cancha 4 -->
+<div class="grid grid-cols-12 gap-2 items-center">
+<div class="col-span-2 font-label-md text-label-md text-on-surface flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-slate-300"></span> Cancha 4
+                            </div>
+<div class="col-span-10 grid grid-cols-10 gap-1 h-10">
+<div class="col-span-2 bg-slate-100 rounded"></div>
+<div class="col-span-4 bg-primary-container/20 border border-primary/20 rounded flex items-center px-2 text-[10px] font-bold text-on-primary-container overflow-hidden whitespace-nowrap">
+                                    Empresa TechCorp
+                                </div>
+<div class="col-span-4 bg-slate-100 rounded"></div>
+</div>
+</div>
+<!-- Cancha 5 -->
+<div class="grid grid-cols-12 gap-2 items-center">
+<div class="col-span-2 font-label-md text-label-md text-on-surface flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span> Cancha 5
+                            </div>
+<div class="col-span-10 grid grid-cols-10 gap-1 h-10">
+<div class="col-span-10 bg-primary-container border border-primary/20 rounded flex items-center px-2 text-[10px] font-bold text-white">
+                                    Torneo Relámpago Sabatino (Ocupación Total)
+                                </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Próximos Partidos List -->
+<section class="lg:col-span-2 bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/30 overflow-hidden">
+<div class="p-6 border-b border-outline-variant/30 flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md text-on-surface">Próximos Partidos</h3>
+<button class="text-primary font-bold text-label-md hover:underline transition-all">Ver todos</button>
+</div>
+<div class="p-6 space-y-4">
+<!-- Partido 1 -->
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl border border-outline-variant/10 hover:border-primary/30 transition-all cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-primary-container/10 flex flex-col items-center justify-center text-primary">
+<span class="text-xs font-bold uppercase">MAY</span>
+<span class="text-lg font-black">24</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">Final Torneo Senior</h4>
+<p class="text-xs text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined !text-xs">schedule</span> 19:30 - 21:00 • Cancha 1
+                                </p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden sm:flex flex-col items-end">
+<p class="text-xs font-bold text-on-surface">Responsable</p>
+<p class="text-xs text-on-surface-variant">Ricardo Gareca (+54 9 11 3242...)</p>
+</div>
+<div class="px-3 py-1 bg-primary-container/20 text-on-primary-container rounded-full text-[10px] font-bold uppercase tracking-tight">Confirmado</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+</div>
+<!-- Partido 2 -->
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl border border-outline-variant/10 hover:border-primary/30 transition-all cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-secondary-container/10 flex flex-col items-center justify-center text-secondary">
+<span class="text-xs font-bold uppercase">MAY</span>
+<span class="text-lg font-black">24</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">Reserva Particular - 5 vs 5</h4>
+<p class="text-xs text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined !text-xs">schedule</span> 20:00 - 21:00 • Cancha 2
+                                </p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden sm:flex flex-col items-end">
+<p class="text-xs font-bold text-on-surface">Responsable</p>
+<p class="text-xs text-on-surface-variant">Andrés Silva (+54 9 11 5566...)</p>
+</div>
+<div class="px-3 py-1 bg-secondary-container/20 text-on-secondary-container rounded-full text-[10px] font-bold uppercase tracking-tight">Pendiente Pago</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+</div>
+<!-- Partido 3 -->
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl border border-outline-variant/10 hover:border-primary/30 transition-all cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-primary-container/10 flex flex-col items-center justify-center text-primary">
+<span class="text-xs font-bold uppercase">MAY</span>
+<span class="text-lg font-black">24</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">Entrenamiento Escuela Juvenil</h4>
+<p class="text-xs text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined !text-xs">schedule</span> 21:00 - 22:30 • Cancha 5
+                                </p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden sm:flex flex-col items-end">
+<p class="text-xs font-bold text-on-surface">Responsable</p>
+<p class="text-xs text-on-surface-variant">Prof. Luis Mendez (+54 9 11 8899...)</p>
+</div>
+<div class="px-3 py-1 bg-primary-container/20 text-on-primary-container rounded-full text-[10px] font-bold uppercase tracking-tight">Confirmado</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Action / Weather Section -->
+<section class="flex flex-col gap-gutter">
+<!-- Weather Widget -->
+<div class="bg-gradient-to-br from-secondary to-secondary-container p-6 rounded-xl text-white shadow-lg relative overflow-hidden">
+<div class="relative z-10">
+<p class="font-label-md text-label-md opacity-80 mb-1">Clima en Buenos Aires</p>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined !text-4xl">wb_sunny</span>
+<span class="font-display-lg text-[40px] leading-none">22°C</span>
+</div>
+<p class="mt-4 font-label-sm text-label-sm">Perfecto para jugar. Sin probabilidad de lluvia para hoy.</p>
+</div>
+<div class="absolute -bottom-8 -right-8 opacity-20 transform rotate-12">
+<span class="material-symbols-outlined !text-[140px]">wb_sunny</span>
+</div>
+</div>
+<!-- System Logs / Activity -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/30 shadow-sm flex-1">
+<h3 class="font-label-md text-label-md text-on-surface mb-4 uppercase tracking-widest opacity-60">Actividad Reciente</h3>
+<div class="space-y-4">
+<div class="flex gap-3">
+<div class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5"></div>
+<div>
+<p class="text-xs font-bold text-on-surface">Nueva Reserva</p>
+<p class="text-[10px] text-on-surface-variant">Cancha 4 • 22:00 hs • Hace 2 min</p>
+</div>
+</div>
+<div class="flex gap-3">
+<div class="w-1.5 h-1.5 rounded-full bg-secondary mt-1.5"></div>
+<div>
+<p class="text-xs font-bold text-on-surface">Pago Registrado</p>
+<p class="text-[10px] text-on-surface-variant">Reserva #4421 • $45 • Hace 15 min</p>
+</div>
+</div>
+<div class="flex gap-3">
+<div class="w-1.5 h-1.5 rounded-full bg-error mt-1.5"></div>
+<div>
+<p class="text-xs font-bold text-on-surface">Cancelación</p>
+<p class="text-[10px] text-on-surface-variant">Cancha 2 • 18:00 hs • Hace 45 min</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-6 py-2 rounded-lg border border-outline-variant text-on-surface-variant text-xs font-bold hover:bg-surface-container transition-colors">
+                        Ver Logs del Sistema
+                    </button>
+</div>
+</section>
+</div>
+</main>
+<!-- FAB for quick action (Only visible on Mobile) -->
+<button class="md:hidden fixed bottom-6 right-6 w-14 h-14 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center z-50 active:scale-95 transition-transform">
+<span class="material-symbols-outlined !text-3xl">add</span>
+</button>
+<!-- Footer Anchor -->
+<footer class="md:hidden bg-surface-container-highest w-full py-4 px-6 flex justify-around items-center fixed bottom-0 left-0 border-t border-outline-variant/30 z-40">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-bold">Inicio</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-[10px] font-bold">Agenda</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">sports_soccer</span>
+<span class="text-[10px] font-bold">Canchas</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-[10px] font-bold">Caja</span>
+</a>
+</footer>
+    <script src="../assets/js/global.js"></script>
+    <script src="../assets/js/panel_admin.js"></script>
+</body></html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PitchMaster - Reserva tu Cancha</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+<script id="tailwind-config" src="../assets/js/tailwind-config.js"></script>
+<link rel="stylesheet" href="../assets/css/global.css" />
+<link rel="stylesheet" href="../assets/css/index.css" />
+</head>
+<body class="text-on-background">
+<!-- TopNavBar -->
+<header class="bg-surface-container-lowest dark:bg-inverse-surface shadow-sm sticky top-0 z-50">
+<nav class="flex justify-between items-center px-margin-desktop h-16 w-full max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">
+                DeportArena
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 hover:text-primary-container dark:hover:text-primary-fixed-dim transition-colors scale-95 active:opacity-80 transition-all" href="#">Ver Campos</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary-container dark:hover:text-primary-fixed-dim transition-colors scale-95 active:opacity-80 transition-all" href="#">Mis Reservas</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary-container dark:hover:text-primary-fixed-dim transition-colors scale-95 active:opacity-80 transition-all" href="#">Perfil</a>
+</div>
+<button class="font-label-md text-label-md text-primary dark:text-primary-fixed hover:text-primary-container dark:hover:text-primary-fixed-dim transition-colors">
+                Iniciar Sesión
+            </button>
+
+            
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[819px] flex items-center justify-center overflow-hidden bg-surface-container-low py-20 px-margin-mobile md:px-margin-desktop">
+<div class="absolute inset-0 z-0 opacity-20">
+<div class="w-full h-full bg-cover bg-center" data-alt="High-angle cinematic shot of a pristine professional synthetic football pitch at sunset. The lighting is warm and golden, casting long shadows across the textured green grass. The atmosphere is energetic yet professional, reflecting a high-end sports facility. Subtle lens flares and a shallow depth of field create a modern, premium aesthetic consistent with a corporate SaaS platform." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCUlm4QSZmhMLZ-WNgbuDO3S7STe9ASbrKAwOk0ySY11Z_wkDLWjxmxWCCOnS8csdpiRYonPXn1iGUhFcHQMptI910G8DhLcuJOiCEpYAXiYSoh86DMHevgVBVEH9_rLpq2lTJOD3CJ2Xvb35ihOHDjyufzLs1u0PIRNQui2YvqtX8d3qSfJTdolhVUp90kMCVkUWFqmMlRnkBFzuNFqgBEWyWT5Lf4TnDdokUBcvkVyqOks506LJSB')"></div>
+</div>
+<div class="relative z-10 text-center max-w-4xl">
+<h1 class="font-display-lg text-display-lg md:text-[64px] md:leading-[72px] text-on-surface mb-6 animate-fade-in-up">
+                    Reserva tu partido de fútbol <span class="text-primary">fácilmente</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-tertiary-fixed-variant mb-10 max-w-2xl mx-auto">
+                    La plataforma líder para gestionar tus partidos. Encuentra las mejores canchas de la ciudad, coordina con tu equipo y asegura tu lugar en segundos.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-primary hover:bg-opacity-90 text-on-primary px-8 py-4 rounded-xl font-label-md text-label-md flex items-center justify-center gap-2 transition-all transform hover:scale-105 active:scale-95 shadow-lg">
+<span class="material-symbols-outlined">sports_soccer</span>
+                        Ver campos
+                    </button>
+<button class="bg-surface-container-lowest border-2 border-outline-variant hover:bg-surface-container text-on-surface px-8 py-4 rounded-xl font-label-md text-label-md transition-all transform hover:scale-105 active:scale-95">
+                        Iniciar Sesión
+                    </button>
+</div>
+</div>
+<!-- Floating Decorative Elements -->
+<div class="absolute -bottom-10 left-10 w-32 h-32 bg-primary-container rounded-full blur-[80px] opacity-30"></div>
+<div class="absolute top-20 right-10 w-48 h-48 bg-secondary-container rounded-full blur-[100px] opacity-20"></div>
+</section>
+<!-- Stats Section (High-utility cards) -->
+<section class="max-w-container-max mx-auto px-margin-desktop -mt-16 relative z-20">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-surface-container flex items-center gap-4">
+<div class="w-12 h-12 bg-primary-container/20 rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">map</span>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Canchas Disponibles</p>
+<h3 class="text-headline-md font-headline-md text-on-surface">+120 Sedes</h3>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-surface-container flex items-center gap-4">
+<div class="w-12 h-12 bg-secondary-container/20 rounded-full flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">groups</span>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Jugadores Activos</p>
+<h3 class="text-headline-md font-headline-md text-on-surface">+5,000 Miembros</h3>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-surface-container flex items-center gap-4">
+<div class="w-12 h-12 bg-tertiary-container/20 rounded-full flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Partidos Reservados</p>
+<h3 class="text-headline-md font-headline-md text-on-surface">+15,000 Goles</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Pitches Section -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Canchas Destacadas</h2>
+<p class="font-body-md text-body-md text-on-tertiary-fixed-variant">Las mejores instalaciones evaluadas por nuestra comunidad.</p>
+</div>
+<button class="text-primary font-label-md text-label-md flex items-center gap-1 hover:underline">
+                    Ver todas las canchas
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Pitch Card 1 -->
+<div class="pitch-card bg-surface-container-lowest rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
+<div class="relative h-56">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="A vibrant daytime view of a modern 5v5 indoor soccer pitch with bright artificial lighting. The surface is high-quality green synthetic grass with clear white lines. The surrounding walls are sleek dark grey, creating a professional atmosphere. The lighting is crisp and even, highlighting the clean textures of the sports facility." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA335-8YUMQqo5yztnH6lwZTx8UBt2iViyT3yEKPRtFXus3nb4SqPRLMFuTauDJDP8NbvkR_Iz-RaGJxxq6kFtL8IW34hAtDU6t7KYIo-XLY840WtoQFdx6atWeaeW5om1lULKpNLi0gu1wdKXVWm93JlQY82MoMacbIHPojYZOd28ZFMyjHlcSysRdFXrpRmZHbFTdQHsugztR6ifSRJ8F2JJakaPiobNy1vEXi9JLeZsF1ghCVsj8')"></div>
+<div class="absolute top-4 right-4 bg-surface-container-lowest/90 backdrop-blur px-3 py-1 rounded-full text-label-sm font-label-sm text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-yellow-500" style="font-variation-settings: 'FILL' 1;">star</span>
+                            4.9
+                        </div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Arena Centenario</h3>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<p class="text-label-sm font-label-sm">Norte, Ciudad Fútbol</p>
+</div>
+</div>
+<div class="text-right">
+<span class="block text-headline-md font-bold text-primary">$40/hr</span>
+</div>
+</div>
+<div class="flex gap-2 mb-6">
+<span class="bg-surface-container-high text-on-tertiary-fixed-variant px-3 py-1 rounded-lg text-label-sm font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">groups</span>
+                                5v5
+                            </span>
+<span class="bg-surface-container-high text-on-tertiary-fixed-variant px-3 py-1 rounded-lg text-label-sm font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">grass</span>
+                                Sintético
+                            </span>
+</div>
+<button class="reserve-btn w-full bg-primary text-on-primary py-3 rounded-xl font-label-md text-label-md flex items-center justify-center gap-2">
+                            Reservar ahora
+                            <span class="material-symbols-outlined text-[18px]">calendar_today</span>
+</button>
+</div>
+</div>
+<!-- Pitch Card 2 -->
+<div class="pitch-card bg-surface-container-lowest rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
+<div class="relative h-56">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Outdoor 5v5 synthetic grass football pitch in an urban rooftop setting. The sky is a deep twilight blue with bright stadium floodlights illuminating the field. The city skyline is visible in the distance with warm glowing lights. The design style is modern and high-performance, emphasizing speed and excitement." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD1_Rjarx06Xt5O1P4tnYq6psUquy03sUQ4M5xHf3oDjNGhRHc-Vjp5aKrtvLFGuygPTb08oZALGsAIN4IaVbgBDYADmd-qAjclj2UpCmGHEgCIRgNRc9j-O0ene7uKwBqnu8rwYdIxe29Zz0_OxUXUm1CJV7ZBei-Kz7nPidCJV1E6o4JPtflkIhArpFH6DRW8bqc6NLJ8TcM5nwIFbwEX_xHKvlWrfmlL1r20_BixeKYTz1ixY4lG')"></div>
+<div class="absolute top-4 right-4 bg-surface-container-lowest/90 backdrop-blur px-3 py-1 rounded-full text-label-sm font-label-sm text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-yellow-500" style="font-variation-settings: 'FILL' 1;">star</span>
+                            4.7
+                        </div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Sky Pitch Rooftop</h3>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<p class="text-label-sm font-label-sm">Centro Histórico</p>
+</div>
+</div>
+<div class="text-right">
+<span class="block text-headline-md font-bold text-primary">$55/hr</span>
+</div>
+</div>
+<div class="flex gap-2 mb-6">
+<span class="bg-surface-container-high text-on-tertiary-fixed-variant px-3 py-1 rounded-lg text-label-sm font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">groups</span>
+                                5v5
+                            </span>
+<span class="bg-surface-container-high text-on-tertiary-fixed-variant px-3 py-1 rounded-lg text-label-sm font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">grass</span>
+                                Sintético Pro
+                            </span>
+</div>
+<button class="reserve-btn w-full bg-primary text-on-primary py-3 rounded-xl font-label-md text-label-md flex items-center justify-center gap-2">
+                            Reservar ahora
+                            <span class="material-symbols-outlined text-[18px]">calendar_today</span>
+</button>
+</div>
+</div>
+<!-- Pitch Card 3 -->
+<div class="pitch-card bg-surface-container-lowest rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
+<div class="relative h-56">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Close-up shot of a high-quality turf surface of a professional 5v5 soccer court. The focus is sharp on the artificial blades of grass, which are vibrant green with rubber infill visible. In the background, a football and the goal net are blurred. Lighting is bright, clean, and professional, mimicking a well-lit indoor sports complex." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC8B4_YtJSBi72U1mBmqEnn3r8qSLH_j2hPJGr2RUXFYREMDg_gjlqOxqPRLhqKqOaujCB4v_AXBTCWlhfhSLSAsnjBOQOFSYicYJTyquCSNQ7l4v-WpxAajoRVTMQP0MaIxEBbh_0l-TqLMgEXisq-hRdSyC1FaDkLavkBOnqPUFeCMEG5TO8nBZcqyUuWcXvRR1o47cJEy1WGKOClnqf0jgGLQ6n7ZDH11nzcX_3Fzmfo_GlFiLIW')"></div>
+<div class="absolute top-4 right-4 bg-surface-container-lowest/90 backdrop-blur px-3 py-1 rounded-full text-label-sm font-label-sm text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-yellow-500" style="font-variation-settings: 'FILL' 1;">star</span>
+                            5.0
+                        </div>
+<div class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 rounded-full text-label-sm font-label-sm flex items-center gap-1">
+                            NUEVO
+                        </div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Club La Victoria</h3>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<p class="text-label-sm font-label-sm">Sur, Valle Verde</p>
+</div>
+</div>
+<div class="text-right">
+<span class="block text-headline-md font-bold text-primary">$35/hr</span>
+</div>
+</div>
+<div class="flex gap-2 mb-6">
+<span class="bg-surface-container-high text-on-tertiary-fixed-variant px-3 py-1 rounded-lg text-label-sm font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">groups</span>
+                                5v5
+                            </span>
+<span class="bg-surface-container-high text-on-tertiary-fixed-variant px-3 py-1 rounded-lg text-label-sm font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">grass</span>
+                                Sintético Elite
+                            </span>
+</div>
+<button class="reserve-btn w-full bg-primary text-on-primary py-3 rounded-xl font-label-md text-label-md flex items-center justify-center gap-2">
+                            Reservar ahora
+                            <span class="material-symbols-outlined text-[18px]">calendar_today</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Bento Grid -->
+<section class="py-24 bg-surface-container-low px-margin-mobile md:px-margin-desktop overflow-hidden">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Diseñado para la Victoria</h2>
+<p class="font-body-md text-body-md text-on-tertiary-fixed-variant">Todo lo que necesitas para que tu único problema sea meter el gol.</p>
+</div>
+<div class="bento-grid">
+<div class="col-span-12 md:col-span-8 bg-surface-container-lowest p-8 rounded-3xl shadow-sm relative overflow-hidden group">
+<div class="relative z-10">
+<h4 class="text-headline-md font-headline-md mb-2">Pagos Divididos</h4>
+<p class="text-body-md text-on-tertiary-fixed-variant max-w-sm mb-6">Se acabó el cobrarle a tus amigos. Divide el total de la reserva directamente desde la app.</p>
+<button class="text-primary font-label-md text-label-md flex items-center gap-1">Saber más <span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+<div class="absolute right-0 bottom-0 w-1/2 h-full opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[200px] absolute -right-10 -bottom-10" style="font-variation-settings: 'FILL' 1;">payments</span>
+</div>
+</div>
+<div class="col-span-12 md:col-span-4 bg-primary p-8 rounded-3xl shadow-sm text-on-primary flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-4xl mb-4">verified</span>
+<h4 class="text-headline-md font-headline-md mb-2">Canchas Verificadas</h4>
+</div>
+<p class="text-on-primary/80 text-body-md">Solo trabajamos con centros deportivos de primer nivel con mantenimiento semanal garantizado.</p>
+</div>
+<div class="col-span-12 md:col-span-4 bg-secondary p-8 rounded-3xl shadow-sm text-on-secondary">
+<div class="flex flex-col h-full justify-between">
+<h4 class="text-headline-md font-headline-md mb-2">Matchmaking</h4>
+<p class="text-on-secondary/80 text-body-md mb-6">¿Te falta uno? Completa tu equipo con jugadores de tu mismo nivel en nuestra comunidad.</p>
+<div class="flex -space-x-2">
+<div class="w-10 h-10 rounded-full border-2 border-secondary bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a young male football player smiling, looking professional and ready for a game. Clean outdoor lighting, high-end sports photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDismM7LpWumA39shYiH3sDyrYopP99HKv6ESg282QEPPDCj3GgYvsKjms3Y1xIWrNqsA-7qukJ8Ksy0eMZJwPGlniikUmSytkMX24qNw3glzJv77P7Xwc6S6n0RBnX4IaB0pI2wPu7SWomM2SRRvwm3BykUvR7GkXm6JbLFFnpYJfyqN_9-Xvo2y-Yqw5aX01vu1CW0ZBHebtu0vsZ7osyCKHhlzUmtkVanI5MVcESDsAn2cBXDjYl"/>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-secondary bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of an athletic woman in football gear, looking determined and professional. High contrast studio lighting, premium feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjhrKSDrOhJrHJ8MdxVgeAlWzAzW47YO_KdRKp3cBJWchBd6BOd5gSctQ2y1I9-qFEyMt81q81EHZk0cqTwbBpl1tiqGqN6F4CGJ-LgOCCplZUyMu5QfXkO8DdxcSWEiy0y03FoimEXH2BEh-T6SzvNLym5vYCechNsSNw2uDi5g_3-BSc1pQ_4EMjKU9G23fCCeRR0kzSDSBHTLmFudIBZHziYNB-OB-KOMJO_Lex9XHz5c9nDt_X"/>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-secondary bg-surface-container-high overflow-hidden flex items-center justify-center text-xs font-bold">
+                                    +48
+                                </div>
+</div>
+</div>
+</div>
+<div class="col-span-12 md:col-span-8 bg-surface-container-lowest p-8 rounded-3xl shadow-sm border border-surface-container">
+<div class="flex flex-col md:flex-row items-center gap-8">
+<div class="flex-1">
+<h4 class="text-headline-md font-headline-md mb-2">Gestión de Torneos</h4>
+<p class="text-body-md text-on-tertiary-fixed-variant mb-6">Organiza ligas y torneos relámpago con tablas de posiciones automáticas y seguimiento de goleadores.</p>
+<div class="flex gap-4">
+<div class="bg-surface-container-low p-3 rounded-xl text-center flex-1">
+<p class="text-label-sm text-on-surface-variant">Ligas</p>
+<p class="text-headline-md font-bold text-secondary">24</p>
+</div>
+<div class="bg-surface-container-low p-3 rounded-xl text-center flex-1">
+<p class="text-label-sm text-on-surface-variant">Equipos</p>
+<p class="text-headline-md font-bold text-primary">156</p>
+</div>
+</div>
+</div>
+<div class="w-full md:w-1/3 aspect-square bg-surface-container-high rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-[80px] text-primary" style="font-variation-settings: 'FILL' 1;">trophy</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface py-12">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-12">
+<div class="max-w-xs">
+<div class="font-headline-md text-headline-md font-bold text-primary mb-4">PitchMaster</div>
+<p class="text-body-md text-on-tertiary-fixed-variant">Transformando la forma en que el mundo juega fútbol, una reserva a la vez.</p>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-8">
+<div>
+<h5 class="font-label-md text-label-md text-on-surface mb-4 uppercase tracking-wider">Producto</h5>
+<ul class="space-y-2">
+<li><a class="text-on-tertiary-fixed hover:text-primary transition-colors font-body-md" href="#">Ver Campos</a></li>
+<li><a class="text-on-tertiary-fixed hover:text-primary transition-colors font-body-md" href="#">Tarifas</a></li>
+<li><a class="text-on-tertiary-fixed hover:text-primary transition-colors font-body-md" href="#">App Móvil</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-md text-label-md text-on-surface mb-4 uppercase tracking-wider">Empresa</h5>
+<ul class="space-y-2">
+<li><a class="text-on-tertiary-fixed hover:text-primary transition-colors font-body-md" href="#">Sobre Nosotros</a></li>
+<li><a class="text-on-tertiary-fixed hover:text-primary transition-colors font-body-md" href="#">Blog</a></li>
+<li><a class="text-on-tertiary-fixed hover:text-primary transition-colors font-body-md" href="#">Contacto</a></li>
+</ul>
+</div>
+<div class="col-span-2 sm:col-span-1">
+<h5 class="font-label-md text-label-md text-on-surface mb-4 uppercase tracking-wider">Legales</h5>
+<ul class="space-y-2">
+<li><a class="text-on-tertiary-fixed hover:text-primary transition-colors font-body-md" href="#">Privacidad</a></li>
+<li><a class="text-on-tertiary-fixed hover:text-primary transition-colors font-body-md" href="#">Términos de Uso</a></li>
+<li><a class="text-on-tertiary-fixed hover:text-primary transition-colors font-body-md" href="#">Soporte</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-surface-container flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-body-md text-on-tertiary-fixed-variant">© 2024 PitchMaster Sports Management. Todos los derechos reservados.</p>
+<div class="flex gap-6">
+<a class="text-on-tertiary-fixed-variant hover:text-primary" href="#"><span class="material-symbols-outlined">face_nod</span></a>
+<a class="text-on-tertiary-fixed-variant hover:text-primary" href="#"><span class="material-symbols-outlined">photo_camera</span></a>
+<a class="text-on-tertiary-fixed-variant hover:text-primary" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+</div>
+</footer>
+</main>
+<!-- FAB for quick search (Conditional for Home) -->
+<button class="fixed bottom-8 right-8 bg-primary-container text-on-primary-container p-4 rounded-2xl shadow-xl hover:scale-110 transition-transform active:scale-95 md:hidden">
+<span class="material-symbols-outlined">search</span>
+</button>
+    <script src="../assets/js/global.js"></script>
+    <script src="../assets/js/index.js"></script>
+</body></html>
