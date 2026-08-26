@@ -1,6 +1,5 @@
-window.tailwind = window.tailwind || {};
-
-tailwind.config = {
+module.exports = {
+  content: ["./htmls/**/*.html", "./assets/js/**/*.js"],
   darkMode: "class",
   theme: {
     extend: {
