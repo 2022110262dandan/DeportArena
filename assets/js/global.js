@@ -16,7 +16,10 @@ const initToasts = () => {
     if (!toast) return;
 
     toast.showMessage = (message) => {
-        toast.querySelector('span:last-child')?.textContent = message;
+        const messageElement = toast.querySelector('span:last-child');
+        if (messageElement) {
+            messageElement.textContent = message;
+        }
         toast.classList.remove('translate-y-20', 'opacity-0');
         setTimeout(() => {
             toast.classList.add('translate-y-20', 'opacity-0');
