@@ -1,0 +1,40 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/htmls/index.html"
+    },
+    {
+      "source": "/index.html",
+      "destination": "/htmls/index.html"
+    },
+    {
+      "source": "/agenda_admin.html",
+      "destination": "/htmls/agenda_admin.html"
+    },
+    {
+      "source": "/caja_admin.html",
+      "destination": "/htmls/caja_admin.html"
+    },
+    {
+      "source": "/campos.html",
+      "destination": "/htmls/campos.html"
+    },
+    {
+      "source": "/panel_admin.html",
+      "destination": "/htmls/panel_admin.html"
+    },
+    {
+      "source": "/perfil.html",
+      "destination": "/htmls/perfil.html"
+    },
+    {
+      "source": "/reservar.html",
+      "destination": "/htmls/reservar.html"
+    },
+    {
+      "source": "/sala_partido.html",
+      "destination": "/htmls/sala_partido.html"
+    }
+  ]
+}
