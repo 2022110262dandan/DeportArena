@@ -2,7 +2,7 @@
 
 Plataforma digital para descubrir, reservar y administrar canchas deportivas. DeportArena busca convertir la gestión de complejos deportivos en una operación centralizada, medible y escalable, mientras ofrece a los jugadores una experiencia rápida para encontrar un espacio, coordinar un partido y administrar su participación.
 
-> **Estado actual:** prototipo funcional de frontend estático, con diseño de producto definido, estructura de assets organizada y modelo inicial de datos preparado para conectar un backend real.
+> **Estado actual:** frontend estático desplegado en Vercel y modelo de datos v2 preparado para Supabase, con administración separada de usuarios generales y administradores asignados por sede o por cancha.
 
 ## 1. Concepto del proyecto
 
@@ -53,6 +53,7 @@ El proyecto comenzó como una interfaz estática orientada a validar el concepto
 - representar los flujos de búsqueda, reserva, perfil, administración y sala de partido;
 - preparar Tailwind CSS para compilación local;
 - diseñar un modelo de datos relacional para una futura integración con PostgreSQL/Supabase.
+- preparar el proyecto para despliegue continuo en Vercel.
 
 Esta separación permite validar primero la experiencia de usuario y después conectar autenticación, persistencia y reglas de negocio con cambios controlados.
 
@@ -70,6 +71,7 @@ Esta separación permite validar primero la experiencia de usuario y después co
 - Caja administrativa para consultar cobros y registrar pagos.
 - Notificaciones, toasts y estados visuales compartidos.
 - Diseño responsive para móvil, tablet y escritorio.
+- Despliegue público configurado mediante Vercel.
 
 ### 5.2. Funcionalidades objetivo del producto conectado
 
@@ -156,9 +158,11 @@ assets/
 
 `global.css` concentra estilos compartidos y `global.js` concentra comportamientos comunes. Cada página mantiene su CSS y JavaScript específico para reducir acoplamiento.
 
+Las rutas de los assets se resolvieron con referencias relativas desde `htmls/`. Cada vista carga una sola vez Tailwind compilado, los estilos globales, sus estilos específicos, el script global y su script específico. La revisión confirmó que no existen referencias duplicadas ni referencias al CDN de Tailwind.
+
 ### Backend objetivo
 
-El archivo [bd.sql](bd.sql) define el modelo inicial para PostgreSQL y utiliza `auth.users`, por lo que la integración prevista encaja especialmente bien con Supabase:
+El archivo [bd.sql](bd.sql) define el modelo v2 para PostgreSQL y utiliza `auth.users`, por lo que la integración prevista encaja especialmente bien con Supabase:
 
 - autenticación administrada por Supabase Auth;
 - PostgreSQL para la información del negocio;
@@ -166,6 +170,8 @@ El archivo [bd.sql](bd.sql) define el modelo inicial para PostgreSQL y utiliza `
 - almacenamiento para avatares e imágenes de canchas;
 - funciones y triggers para automatizaciones de datos;
 - canales realtime para disponibilidad y actualizaciones operativas.
+
+Los usuarios generales se registran como jugadores. Los administradores utilizan cuentas de correo creadas en Supabase Auth y reciben permisos mediante `miembros_sede` para una sede completa o `administradores_cancha` para una cancha concreta. El correo no se duplica en las tablas públicas.
 
 El frontend no debe conectarse directamente con credenciales privilegiadas. Las operaciones sensibles deben validarse mediante políticas RLS, funciones SQL seguras o un backend controlado.
 
@@ -175,14 +181,19 @@ El esquema actual contempla:
 
 - `profiles`: perfil del jugador, posiciones preferidas y rol administrativo.
 - `canchas`: características, capacidad y estado de cada cancha.
+- `organizaciones` y `sedes`: separación del negocio y sus ubicaciones para soportar múltiples complejos.
+- `miembros_sede` y `administradores_cancha`: roles administrativos asignados por sede o por cancha.
 - `tarifas_cancha`: precios por día y franja horaria.
-- `reservas`: fecha, horario, usuario, precio, pago, bloqueo y enlace de invitación.
+- `reservas`: fecha, horario, estado operativo, usuario, precio, bloqueo y enlace de invitación.
+- `pagos` y `reembolsos`: movimientos financieros separados de la reserva.
 - `partidos_sala`: sala asociada a una reserva y estructura de los equipos.
 - `partido_jugadores`: participantes, posición elegida y estado de asistencia.
+- `equipos` y `equipo_jugadores`: equipos normalizados sin depender únicamente de JSONB.
+- `invitaciones_partido` y `auditoria`: invitaciones controladas y trazabilidad administrativa.
 
 También se definieron enums para posiciones, asistencia, formato de cancha, métodos de pago y estados de pago. El trigger `handle_new_user` crea automáticamente un perfil cuando se registra un usuario en Auth.
 
-Antes de producción será necesario añadir índices, restricciones contra solapamientos de reservas, timestamps de actualización, auditoría y políticas RLS. La prevención de doble reserva debe resolverse en la base de datos o en una transacción backend, no únicamente en la interfaz.
+La v2 ya incorpora índices, timestamps de actualización, auditoría y una restricción PostgreSQL contra solapamientos de reservas activas. Antes de producción todavía deben añadirse y probarse las políticas RLS, las migraciones desde cualquier base anterior y las reglas de negocio de pagos.
 
 ## 9. Plan de desarrollo por fases
 
@@ -195,7 +206,8 @@ Antes de producción será necesario añadir índices, restricciones contra sola
 
 ### Fase 1: Fundación técnica
 
-- Crear el proyecto de Supabase y aplicar `bd.sql` revisado.
+- Crear el proyecto de Supabase y aplicar `bd.sql` v2 en un entorno de desarrollo.
+- Crear las cuentas de administración en Auth y asignarlas mediante `administradores_cancha` o `miembros_sede`.
 - Configurar variables de entorno y separación entre desarrollo, pruebas y producción.
 - Implementar autenticación y perfiles.
 - Añadir RLS y roles de jugador, capitán y administrador.
@@ -308,7 +320,7 @@ npm run build
 
 El comando de build usa `assets/js/tailwind-config.js` y `assets/css/tailwind-input.css` para generar `assets/css/tailwind.css` minificado.
 
-Para probar el sitio localmente, se puede utilizar cualquier servidor estático que sirva la raíz del proyecto. La página principal es `htmls/index.html`. En producción, [vercel.json](vercel.json) redirige las rutas principales hacia las vistas dentro de `htmls/` y ejecuta `npm run build` antes del despliegue.
+Para probar el sitio localmente, se puede utilizar cualquier servidor estático que sirva la raíz del proyecto. La página principal es `htmls/index.html`. El proyecto ya está desplegado en Vercel: [vercel.json](vercel.json) redirige las rutas principales hacia las vistas dentro de `htmls/` y ejecuta `npm run build` antes de cada despliegue.
 
 ## 14. Despliegue
 
@@ -316,12 +328,12 @@ El despliegue previsto utiliza Vercel para el frontend estático. El backend, cu
 
 Checklist de producción:
 
-1. Configurar el proyecto y dominio en Vercel.
+1. Mantener configurados el proyecto y el dominio en Vercel.
 2. Añadir las variables públicas necesarias para el cliente, sin incluir secretos.
-3. Configurar Supabase Auth, URLs permitidas y políticas RLS.
-4. Ejecutar migraciones de base de datos en un entorno controlado.
+3. Configurar Supabase Auth, URLs permitidas y políticas RLS cuando se conecte el backend.
+4. Ejecutar la migración v2 de base de datos en un entorno controlado.
 5. Ejecutar build y pruebas automatizadas en CI.
-6. Revisar logs, errores y métricas posteriores al despliegue.
+6. Revisar logs, errores y métricas posteriores a cada despliegue.
 
 ## 15. Estructura de trabajo recomendada a futuro
 
@@ -346,5 +358,5 @@ Una evolución razonable sería:
 
 ## 17. Próximo hito
 
-El siguiente hito técnico es transformar el prototipo en un MVP conectado: corregir las referencias duplicadas de assets, validar la compilación, levantar el sitio localmente, crear el proyecto de base de datos, implementar autenticación y entregar el primer flujo completo de consulta de disponibilidad y reserva.
+El siguiente hito técnico es conectar el frontend desplegado con Supabase: aplicar y probar `bd.sql` v2 en desarrollo, crear el primer usuario general y una cuenta administrativa por correo, validar sus permisos y entregar el flujo completo de consulta de disponibilidad y reserva.
 Buenas buenas

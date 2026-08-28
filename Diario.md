@@ -65,17 +65,12 @@ Organizar `DeportArena` como una aplicación web estática mantenible, separando
 - Las ocho vistas tienen sus assets específicos y los recursos globales conectados.
 - La compilación y el funcionamiento visual completo en navegador aún necesitan una validación final.
 
-## 5. Próximos pasos
-1. Eliminar las referencias repetidas a `global.css` en los HTML y revisar que cada recurso global se cargue una sola vez.
-2. Ejecutar `npm install` y `npm run build` desde la raíz; confirmar que no haya errores y que se regenere `assets/css/tailwind.css`.
-3. Levantar un servidor estático local y probar las ocho páginas.
-4. Revisar la consola del navegador, las rutas de assets, los enlaces entre vistas y los errores JavaScript.
-5. Comprobar las interacciones principales: búsqueda, notificaciones, paneles, agenda, reservas, selección de campos y sala de partido.
-6. Revisar los CSS específicos para mover a `global.css` las reglas verdaderamente repetidas, evitando romper estilos particulares.
-7. Revisar los JS específicos para identificar lógica repetida que pueda pasar a `global.js` sin crear dependencias innecesarias.
-8. Verificar el diseño responsive en móvil, tablet y escritorio.
-9. Confirmar que la información y las operaciones previstas en `bd.sql` coincidan con las vistas actuales.
-10. Hacer una última revisión del README y probar el despliegue en Vercel.
+## 5. Próximos pasos del frontend
+1. Ejecutar `npm install` y `npm run build` desde la raíz.
+2. Levantar un servidor estático local y probar las ocho páginas.
+3. Revisar la consola del navegador, las rutas de assets y los errores JavaScript.
+4. Comprobar búsqueda, notificaciones, paneles, agenda, reservas, selección de campos y sala de partido.
+5. Verificar el diseño responsive en móvil, tablet y escritorio.
 
 ## 6. Archivos clave
 - `assets/css/global.css`
@@ -87,6 +82,28 @@ Organizar `DeportArena` como una aplicación web estática mantenible, separando
 - `README.md`
 - `vercel.json`
 
-## 7. Nota
-El proyecto ya cuenta con una base estática ordenada y una ruta de compilación definida. La prioridad inmediata es cerrar la limpieza de referencias duplicadas y realizar las pruebas funcionales y visuales antes del despliegue.
+## 7. Actualización de base de datos v2
+- Se reemplazó el modelo inicial por `bd.sql` v2 para PostgreSQL/Supabase.
+- Se separaron los usuarios generales de la administración mediante roles y membresías.
+- Se añadieron `organizaciones`, `sedes`, `miembros_organizacion` y `miembros_sede` para soportar múltiples complejos.
+- Se añadió `administradores_cancha` para asignar una cuenta de correo de Supabase Auth a una cancha específica.
+- Los correos y credenciales permanecen en `auth.users`; no se duplican en tablas públicas.
+- Se añadieron estados operativos de reserva, restricciones contra solapamientos activos y eliminación no destructiva de canchas.
+- Se separaron `pagos` y `reembolsos` de las reservas.
+- Se normalizaron equipos y jugadores mediante `equipos` y `equipo_jugadores`.
+- Se añadieron invitaciones con expiración, auditoría, índices y timestamps de actualización.
+- Se reforzó el trigger de creación de perfiles con `security definer`, `search_path` y protección contra duplicados.
+
+## 8. Próximos pasos inmediatos
+1. Crear el proyecto Supabase de desarrollo.
+2. Ejecutar y probar `bd.sql` v2 en ese entorno; si existe una base anterior, preparar una migración controlada.
+3. Crear un usuario general y una cuenta administrativa con correo específico.
+4. Asignar el administrador a una sede o cancha mediante `miembros_sede` o `administradores_cancha`.
+5. Implementar RLS para que cada usuario vea solo sus datos y cada administrador opere únicamente sus recursos.
+6. Conectar autenticación, catálogo, disponibilidad y creación transaccional de reservas.
+7. Probar específicamente que un administrador de una cancha no pueda consultar ni modificar otra cancha.
+8. Añadir una migración de enums si el proyecto Supabase ya contiene el esquema v1.
+
+## 9. Nota
+El proyecto cuenta con un frontend estático desplegado y una base de datos v2 diseñada para crecer. La prioridad actual es probar la separación de permisos y conectar el primer flujo real de autenticación y reserva.
 
