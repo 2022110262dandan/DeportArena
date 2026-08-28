@@ -27,6 +27,10 @@
       "destination": "/htmls/panel_admin.html"
     },
     {
+      "source": "/gestion_canchas_admin.html",
+      "destination": "/htmls/gestion_canchas_admin.html"
+    },
+    {
       "source": "/perfil.html",
       "destination": "/htmls/perfil.html"
     },
