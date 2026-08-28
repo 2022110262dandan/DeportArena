@@ -13,3 +13,4 @@ npm run build
 ```
 
 El comando genera `assets/css/tailwind.css`. Vercel ejecuta automáticamente `npm run build` mediante `vercel.json` antes de publicar el sitio.
+Buenas buenas
